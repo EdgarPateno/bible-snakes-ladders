@@ -132,6 +132,7 @@ export function QuestionModal({ game, question, rules }: QuestionModalProps) {
                   id="answer-input"
                   data-autofocus
                   autoComplete="off"
+                  maxLength={120}
                   autoCapitalize="off"
                   spellCheck={false}
                   value={given}

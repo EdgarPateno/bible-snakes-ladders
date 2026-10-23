@@ -113,24 +113,37 @@ export function readNumbers(words: string[], lenient: boolean): { values: number
   const used = new Set<number>();
   let total = 0;
   let current = 0;
+  // The next value must be smaller than this to belong to the same number (90 + 9 yes, 20 + 20 no).
+  let place = Infinity;
   let inRun = false;
   let pending: number[] = [];
   const close = () => {
     if (inRun) values.push(total + current);
     total = 0;
     current = 0;
+    place = Infinity;
     inRun = false;
     pending = [];
   };
-  words.forEach((raw, i) => {
-    const w = asNumberToken(raw, lenient);
+  const tokens = words.map((w) => asNumberToken(w, lenient));
+  tokens.forEach((w, i) => {
+    // "usa ka isda" is "a fish", not the number 1.
+    if (w === 'usa' && tokens[i + 1] === 'ka' && !(tokens[i + 2] && isNumberToken(tokens[i + 2]))) {
+      close();
+      return;
+    }
     if (isDigits(w) || w in NUMBER_VALUES) {
-      current += isDigits(w) ? Number(w) : NUMBER_VALUES[w];
+      const v = isDigits(w) ? Number(w) : NUMBER_VALUES[w];
+      if (inRun && v >= place) close();
+      current += v;
+      place = !isDigits(w) && v >= 10 && v < 100 && v % 10 === 0 ? 10 : 1;
     } else if (HUNDREDS.has(w)) {
       current = (current || 1) * 100;
+      place = 100;
     } else if (THOUSANDS.has(w)) {
       total += (current || 1) * 1000;
       current = 0;
+      place = 1000;
     } else if (inRun && NUMBER_JOINERS.has(w)) {
       pending.push(i);
       return;
@@ -170,7 +183,8 @@ function sameRoot(a: string, b: string): boolean {
   const rb = stripSwapPrefix(b);
   if ((ra !== a || rb !== b) && ra === rb) return true;
   const [short, long] = a.length <= b.length ? [a, b] : [b, a];
-  if (short.length < 4) return false;
+  // Real affix stacks are short; this also keeps a pasted wall of letters from freezing the page.
+  if (short.length < 4 || long.length - short.length > 12) return false;
   for (let i = long.indexOf(short); i !== -1; i = long.indexOf(short, i + 1)) {
     const prefix = long.slice(0, i);
     const suffix = long.slice(i + short.length);
@@ -206,7 +220,9 @@ function hitsAnswer(given: string[], original: string, answer: string, lenient: 
   // Numbers are compared by value: "napulo ug duha" = "napulog duha" = 12; "40 o 50" and "400" are not 40.
   const sameValues = (x: number[], y: number[]) => new Set(x).size === new Set(y).size && x.every((v) => y.includes(v));
   if ((answerNums.values.length || givenNums.values.length) && !sameValues(answerNums.values, givenNums.values)) return false;
-  const words = given.filter((w, i) => !givenNums.used.has(i) && (!STOPWORDS.has(w) || SEPARATORS.has(w)));
+  const words = given.filter(
+    (w, i) => !givenNums.used.has(i) && (!STOPWORDS.has(w) || SEPARATORS.has(w)) && !(w === 'usa' && given[i + 1] === 'ka'),
+  );
   const answerWords = keywords(answer).filter((_, i) => !answerNums.used.has(i));
   // Negations and "or" between guesses only count when the answer itself uses them.
   if (words.some((w) => (NEGATIONS.has(w) || SEPARATORS.has(w)) && !answerSet.has(w))) return false;

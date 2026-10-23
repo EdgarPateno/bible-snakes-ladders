@@ -166,6 +166,24 @@ describe('keyword matching', () => {
     expect(checkAnswer('upat o lima', ['4'], false)).toBe(false);
     expect(checkAnswer('dili 40', ['40'], false)).toBe(false);
   });
+  it('reads "usa ka" before a word as "a", not the number 1', () => {
+    expect(checkAnswer('usa ka isda', ['isda'], false)).toBe(true);
+    expect(checkAnswer('usa ka dakong isda', ['isda'], false)).toBe(true);
+    expect(checkAnswer('usa ka libo', ['1000'], false)).toBe(true);
+  });
+  it('only joins number words by place value', () => {
+    expect(checkAnswer('20 20', ['40'], false)).toBe(false);
+    expect(checkAnswer('20 ug 20', ['40'], false)).toBe(false);
+    expect(checkAnswer('upat (4)', ['4'], false)).toBe(true);
+    expect(checkAnswer('dose (12)', ['12'], false)).toBe(true);
+    expect(checkAnswer('kawhaan ug lima', ['25'], false)).toBe(true);
+  });
+  it('stays fast on a very long nonsense reply', () => {
+    const t0 = Date.now();
+    checkAnswer('paka'.repeat(25) + 'zbalangaw', ['balangaw'], true);
+    checkAnswer('balangaw' + 'on'.repeat(32) + 'x', ['balangaw'], true);
+    expect(Date.now() - t0).toBeLessThan(200);
+  });
   it('does not count words repeated from the question as extra', () => {
     const q = 'Kinsa ang gisugo ni Jehova nga maghimo ug dakong arka?';
     expect(checkAnswer('Si Noe ang gisugo', ['Noe'], false, q)).toBe(true);

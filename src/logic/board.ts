@@ -77,7 +77,7 @@ const CLASSIC: Record<BoardSize, { snakes: [number, number][]; ladders: [number,
   100: {
     ladders: [[2, 38], [4, 14], [9, 31], [21, 42], [28, 84], [51, 67], [71, 91], [80, 100]],
     // 70→8 was added for a harder game; its list position sets its curve (bending away from the 49 head) and colour.
-    snakes: [[16, 6], [47, 26], [49, 11], [62, 19], [87, 24], [93, 73], [95, 64], [70, 8], [98, 78]],
+    snakes: [[16, 6], [47, 26], [49, 11], [62, 19], [87, 24], [93, 73], [95, 64], [70, 8], [99, 56]],
   },
   64: {
     ladders: [[3, 22], [11, 26], [20, 39], [27, 46], [43, 58]],
