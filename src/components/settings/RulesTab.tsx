@@ -47,7 +47,7 @@ export function RulesTab() {
           <Toggle
             id="rule-lenient"
             label="Allow small typos"
-            description="Accept a wrong letter in answers of 4–7 letters, two in longer ones (not in numbers). Capitals, accents and punctuation are always ignored."
+            description="Accept one wrong letter in words of 6–9 letters and two in longer words, as long as the first letter is right. Words of 5 letters or fewer and numbers must be exact. Capitals, accents and punctuation are always ignored."
             checked={rules.lenientMatching}
             onChange={(v) => setRules({ lenientMatching: v })}
           />

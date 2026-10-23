@@ -38,7 +38,7 @@ export function WinnerScreen({ game, sound, onPlayAgain, onNewGame }: WinnerScre
 
   if (!winner) return null;
   const rows = standings(game.order, game.positions, game.winnerId);
-  const turns = game.log.length;
+  const turns = game.log.filter((e) => e.playerId === winner.id).length;
 
   return (
     <Modal open={open} title={`${winner.name} wins`} width="max-w-xl">
@@ -48,7 +48,7 @@ export function WinnerScreen({ game, sound, onPlayAgain, onNewGame }: WinnerScre
         </div>
         <p className="label-caps mt-4 text-lg text-gilt">Well done, good and faithful player</p>
         <h2 className="font-display text-5xl text-oxblood">{winner.name} wins!</h2>
-        <p className="mt-1 text-lg text-ink-soft">Reached square {game.board.size} after {turns} {turns === 1 ? 'move' : 'moves'}.</p>
+        <p className="mt-1 text-lg text-ink-soft">Reached square {game.board.size} in {turns} {turns === 1 ? 'turn' : 'turns'}.</p>
 
         <h3 className="label-caps mt-6 text-left text-xl text-oxblood">Final standings</h3>
         <ol className="mt-2 flex flex-col gap-1.5 text-left">

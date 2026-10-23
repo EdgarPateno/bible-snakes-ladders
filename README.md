@@ -45,7 +45,7 @@ Changes to players and the board apply to the next game; a running game keeps th
 
 Answers are compared after lowercasing, trimming, removing accents and punctuation, and dropping leading articles (English *the/a/an*, Cebuano *ang/si/sila/ni/kang/sa/mga*). So "Si Moises", "moises" and "MOISES." all match "Moises".
 
-With **Allow small typos** on, an answer may be off by one letter (4–7 letters) or two (8+ letters). Short answers (3 letters or fewer) and numbers must match exactly.
+With **Allow small typos** on, each word may be off by one letter (6–9 letters) or two (10+ letters), as long as its first letter is right. Words of 5 letters or fewer and numbers must match exactly, because short names often differ by one letter (Maria / Marta). A number answer such as `40` also matches a reply that contains exactly that number ("40 ka adlaw").
 
 ## Editing questions
 
@@ -123,4 +123,4 @@ scripts/                 artifact build + questions.json generator
 questions.json           sample import file (same as the built-in questions)
 ```
 
-After changing `src/data/defaultQuestions.ts`, run `npx vite-node scripts/write-questions-json.mjs` to refresh `questions.json` (a test checks they match).
+The built-in questions live in `src/data/questions.ceb.json`. After changing them, run `npx vite-node scripts/write-questions-json.mjs` to refresh `questions.json` (a test checks they match).

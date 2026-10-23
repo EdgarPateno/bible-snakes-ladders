@@ -15,6 +15,7 @@ interface QuestionModalProps {
   rules: Rules;
 }
 
+const AUTO_MOVE_MS = 2500;
 const DIFFICULTY_LABEL = { easy: 'Easy', medium: 'Medium', hard: 'Hard' } as const;
 
 /** Mount with key={turn + question id} so every question starts with an empty answer and a full timer. */
@@ -57,6 +58,15 @@ export function QuestionModal({ game, question, rules }: QuestionModalProps) {
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [asking, tick, rules.answerTimerSeconds]);
+
+  // A correct answer moves the token on its own after a short pause; "Move now" skips the wait.
+  // A wrong answer waits for "Next player" so the room can read the right answer.
+  const movesNext = !asking && (feedback?.outcome === 'correct' || feedback?.outcome === 'skipped');
+  useEffect(() => {
+    if (!movesNext) return;
+    const t = setTimeout(() => continueAfterFeedback(rules.extraTurnOnSix), AUTO_MOVE_MS);
+    return () => clearTimeout(t);
+  }, [movesNext, continueAfterFeedback, rules.extraTurnOnSix]);
 
   if (!player) return null;
   const correct = feedback?.outcome === 'correct';
@@ -183,7 +193,7 @@ export function QuestionModal({ game, question, rules }: QuestionModalProps) {
                   <Button onClick={() => resolve('correct', true, feedback.given)}>Accept anyway</Button>
                 )}
                 <Button variant="primary" size="lg" data-autofocus onClick={() => continueAfterFeedback(rules.extraTurnOnSix)}>
-                  {correct || feedback.outcome === 'skipped' ? 'Move' : 'Next player'}
+                  {correct || feedback.outcome === 'skipped' ? 'Move now' : 'Next player'}
                 </Button>
               </div>
             </div>

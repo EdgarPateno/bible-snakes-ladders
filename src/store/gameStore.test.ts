@@ -135,3 +135,19 @@ describe('answer guards', () => {
     expect(typeof useGame.getState().game!.askedAt).toBe('number');
   });
 });
+
+describe('no questions at all', () => {
+  it('lets the roll count, and a 6 still earns the extra turn', () => {
+    useGame.getState().startGame(settings);
+    const s = useGame.getState();
+    forceRoll(6);
+    s.beginRoll();
+    s.rollLanded([], true);
+    expect(useGame.getState().game!.feedback?.outcome).toBe('skipped');
+    s.continueAfterFeedback(true);
+    s.finishMove(true);
+    const g = useGame.getState().game!;
+    expect(g.positions[settings.players[0].id]).toBe(6);
+    expect(g.current).toBe(0);
+  });
+});

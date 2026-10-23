@@ -189,7 +189,8 @@ export const useGame = create<GameStore>()(
         const landing = walks.length ? walks[walks.length - 1].square : from;
         const bounced = walks.some((s, i) => i > 0 && s.square < walks[i - 1].square);
         const won = final === g.board.size;
-        const extraTurn = !won && extraTurnOnSix && g.roll === 6 && g.feedback?.outcome === 'correct';
+        const earned = g.feedback?.outcome === 'correct' || g.feedback?.outcome === 'skipped';
+        const extraTurn = !won && extraTurnOnSix && g.roll === 6 && earned;
         const entry = logEntry(g, {
           from,
           landing,
