@@ -4,6 +4,8 @@ A classic snakes-and-ladders board game for the browser where every roll has to 
 
 The seed questions are written in Cebuano and taken from the book *Mga Leksiyon nga Imong Makat-onan Gikan sa Bibliya* (jw.org). There are 48 of them, 8 per dice number, easier on 1 and harder on 6. Every question lists its lesson number and Bible reference, and `research/questions-ceb-sources.md` quotes the lesson sentence that proves each answer.
 
+**Play it:** https://edgarpateno.github.io/bible-snakes-ladders/
+
 Built with React 18, TypeScript, Vite, Tailwind CSS, Framer Motion and Zustand. No backend: everything is saved in the browser.
 
 ## Run it
@@ -109,7 +111,7 @@ Rows with problems are listed by line number in the import preview and skipped.
 
 - **Netlify:** build command `npm run build`, publish directory `dist`.
 - **Vercel:** framework preset "Vite", output directory `dist`.
-- **GitHub Pages:** run `npm run build` and publish the `dist/` folder (for example with the `actions/deploy-pages` workflow or by pushing `dist/` to a `gh-pages` branch).
+- **GitHub Pages:** already set up. `.github/workflows/deploy.yml` runs the tests, builds and deploys on every push to `main`, to https://edgarpateno.github.io/bible-snakes-ladders/.
 
 ### claude.ai Artifact
 
