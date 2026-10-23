@@ -76,7 +76,8 @@ export function validateBoard(board: BoardConfig): BoardError[] {
 const CLASSIC: Record<BoardSize, { snakes: [number, number][]; ladders: [number, number][] }> = {
   100: {
     ladders: [[2, 38], [4, 14], [9, 31], [21, 42], [28, 84], [51, 67], [71, 91], [80, 100]],
-    snakes: [[16, 6], [47, 26], [49, 11], [62, 19], [87, 24], [93, 73], [95, 75], [98, 78]],
+    // 70→8 was added for a harder game; its list position sets its curve (bending away from the 49 head) and colour.
+    snakes: [[16, 6], [47, 26], [49, 11], [62, 19], [87, 24], [93, 73], [95, 64], [70, 8], [98, 78]],
   },
   64: {
     ladders: [[3, 22], [11, 26], [20, 39], [27, 46], [43, 58]],
@@ -99,7 +100,9 @@ export function classicLayout(size: BoardSize): BoardConfig {
 
 export function randomizeJumps(size: BoardSize, rand: Rand = Math.random): BoardConfig {
   const { cols } = boardDims(size);
-  const count = size === 100 ? 8 : size === 64 ? 6 : 5;
+  // Same number of snakes and ladders as the classic layout for this size.
+  const ladderCount = CLASSIC[size].ladders.length;
+  const snakeCount = CLASSIC[size].snakes.length;
   const starts = new Set<number>();
   const ends = new Set<number>();
   const snakes: Jump[] = [];
@@ -125,11 +128,15 @@ export function randomizeJumps(size: BoardSize, rand: Rand = Math.random): Board
     return null;
   };
 
-  for (let i = 0; i < count; i++) {
-    const l = place('ladder');
-    if (l) ladders.push(l);
-    const s = place('snake');
-    if (s) snakes.push(s);
+  for (let i = 0; i < Math.max(ladderCount, snakeCount); i++) {
+    if (i < ladderCount) {
+      const l = place('ladder');
+      if (l) ladders.push(l);
+    }
+    if (i < snakeCount) {
+      const s = place('snake');
+      if (s) snakes.push(s);
+    }
   }
   return { size, snakes, ladders };
 }

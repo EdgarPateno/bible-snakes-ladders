@@ -3,6 +3,7 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 import type { BoardConfig, Player, Question, Rules, Settings } from '../types';
 import { DEFAULT_SETTINGS, MAX_PLAYERS, MIN_PLAYERS, PLAYER_COLORS, PLAYER_TOKENS } from '../data/defaults';
 import { sanitizeSettings } from '../logic/importExport';
+import { upgradeBoard, upgradeQuestions } from '../data/legacy';
 import { DEFAULT_QUESTIONS } from '../data/defaultQuestions';
 import { safeStorage } from '../lib/storage';
 import { uid } from '../lib/random';
@@ -95,7 +96,8 @@ export const useSettings = create<SettingsState>()(
       merge: (persisted, current) => {
         if (!persisted) return current;
         const s = sanitizeSettings(persisted);
-        return { ...current, players: s.players, questions: s.questions, board: s.board, rules: s.rules };
+        // Untouched old defaults (board, answer lists) get the current built-in version.
+        return { ...current, players: s.players, questions: upgradeQuestions(s.questions), board: upgradeBoard(s.board), rules: s.rules };
       },
     },
   ),

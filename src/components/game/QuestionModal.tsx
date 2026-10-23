@@ -43,7 +43,7 @@ export function QuestionModal({ game, question, rules }: QuestionModalProps) {
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!question || !given.trim()) return;
-    resolve(checkAnswer(given, question.acceptedAnswers, rules.lenientMatching) ? 'correct' : 'wrong', false);
+    resolve(checkAnswer(given, question.acceptedAnswers, rules.lenientMatching, question.question) ? 'correct' : 'wrong', false);
   };
 
   // Answer timer.

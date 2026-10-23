@@ -47,7 +47,7 @@ export function RulesTab() {
           <Toggle
             id="rule-lenient"
             label="Allow small typos"
-            description="Accept one wrong letter in words of 6–9 letters and two in longer words, as long as the first letter is right. Words of 5 letters or fewer and numbers must be exact. Capitals, accents and punctuation are always ignored."
+            description="Accept one wrong letter in words of 6–9 letters and two in longer words, as long as the first letter is right. Words of 5 letters or fewer and numbers must be exact. Answers are always matched by keyword with or without this: Cebuano affixes are ignored (MAPAINUBSANON counts for PAGKAMAPAINUBSANON), names must stand alone, and guesses joined by “o” or commas are rejected."
             checked={rules.lenientMatching}
             onChange={(v) => setRules({ lenientMatching: v })}
           />

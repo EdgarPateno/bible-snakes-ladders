@@ -65,6 +65,12 @@ describe('validateBoard', () => {
 });
 
 describe('layouts', () => {
+  it('the classic 100-square board has 9 snakes (including 70→8) and 8 ladders', () => {
+    const b = classicLayout(100);
+    expect(b.snakes).toHaveLength(9);
+    expect(b.snakes.some((s) => s.from === 70 && s.to === 8)).toBe(true);
+    expect(b.ladders).toHaveLength(8);
+  });
   it('classic layouts are valid for every size', () => {
     for (const size of [50, 64, 100] as const) {
       expect(validateBoard(classicLayout(size))).toEqual([]);
@@ -75,8 +81,8 @@ describe('layouts', () => {
       for (const size of [50, 64, 100] as const) {
         const b = randomizeJumps(size);
         expect(validateBoard(b)).toEqual([]);
-        expect(b.snakes.length).toBeGreaterThan(0);
-        expect(b.ladders.length).toBeGreaterThan(0);
+        expect(b.snakes).toHaveLength(classicLayout(size).snakes.length);
+        expect(b.ladders).toHaveLength(classicLayout(size).ladders.length);
       }
     }
   });

@@ -43,9 +43,17 @@ Changes to players and the board apply to the next game; a running game keeps th
 
 ### Answer checking
 
-Answers are compared after lowercasing, trimming, removing accents and punctuation, and dropping leading articles (English *the/a/an*, Cebuano *ang/si/sila/ni/kang/sa/mga*). So "Si Moises", "moises" and "MOISES." all match "Moises".
+Answers don't have to be word for word. A reply is correct when it hits every **keyword** of one accepted answer:
 
-With **Allow small typos** on, each word may be off by one letter (6–9 letters) or two (10+ letters), as long as its first letter is right. Words of 5 letters or fewer and numbers must match exactly, because short names often differ by one letter (Maria / Marta). A number answer such as `40` also matches a reply that contains exactly that number ("40 ka adlaw").
+- Capitals, accents, punctuation, hyphens and small words (*ang, sa, si, ni, kang, nga, mga, ka, mao, siya, oo, lang, gyud*, *the, a, of*…) are ignored, so "Si Moises", "Oo, si Moises" and "MOISES." all match "Moises".
+- **Cebuano affixes don't matter.** A word counts when it is the keyword plus or minus prefixes (*pagka-, pag-, ka-, ma-, pa-, mag-, nag-, gi-, mi-*…) and suffixes (*-ng, -an, -on, -han, -hon, -anon*…): **MAPAINUBSANON** matches **PAGKAMAPAINUBSANON**, "maayo" matches "pagkamaayohon", "nag-ampo" matches "pag-ampo", "haligi" matches "haliging". Other added letters don't count, so "Bathsheba" is not "Sheba" and "Juana" is not "Juan". Short words (4–5 letters) only take the *-ng* linker or a long suffix, so "Sans" is not "Sanson"; list spelling variants such as "Saul" / "Saulo" as separate accepted answers.
+- **Names must stand on their own** ("Si Noe" is right, "Noe Moises" is a guess). Other answers may carry one describing word ("dakong isda"); number answers may carry a unit ("baynte ka pirasong silver"). Words the player repeats from the question never count as extra ("Si Noe ang gisugo").
+- **Guesses and negations are rejected:** "Noe o Moises", "Maria, Marta", "Maria/Marta" and "dili pula" all fail, unless the accepted answer itself uses those words.
+- **Numbers are compared by value,** in digits or words (Cebuano, Spanish-Cebuano or English): "napulo ug duha", "napulog duha", "dose" and "12" are all 12; "upat ka gatos ug kaliman" is 450. "400", "40 o 50" and "kuwatro sientos" (for 4) don't match.
+
+With **Allow small typos** on, each word may also be off by one letter (6–9 letters) or two (10+ letters), as long as its first letter is right ("kuwarinta" reads as "kuwarenta"). Words of 5 letters or fewer must be spelled exactly, because short names often differ by one letter (Maria / Marta). A typo and a dropped affix can't be combined in one word.
+
+If the game still marks a fair answer wrong, the host can press **Accept anyway**.
 
 ## Editing questions
 

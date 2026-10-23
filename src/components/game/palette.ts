@@ -6,4 +6,7 @@ export const SNAKE_COLORS = [
   { body: '#e0662a', stripe: '#9c4115', belly: '#ffd08a' },
   { body: '#139a85', stripe: '#0b6255', belly: '#9be8d6' },
   { body: '#c0392b', stripe: '#7d241b', belly: '#f5b7a8' },
+  { body: '#2b6cb0', stripe: '#1a4373', belly: '#a9cdf2' },
+  { body: '#d6336c', stripe: '#8f1f47', belly: '#f7b6cc' },
+  { body: '#3d3a38', stripe: '#1c1a19', belly: '#c9c2bb' },
 ];

@@ -55,7 +55,7 @@ describe('checkAnswer', () => {
     expect(checkAnswer('!!!', accepted, false)).toBe(false);
   });
   it('rejects typos when lenient matching is off', () => {
-    expect(checkAnswer('Methusela', ['Methuselah'], false)).toBe(false);
+    expect(checkAnswer('Methuzelah', ['Methuselah'], false)).toBe(false);
   });
   it('allows 1 typo per word for 6-9 letters and 2 for 10+ when lenient', () => {
     expect(checkAnswer('Methusela', ['Methuselah'], true)).toBe(true);
@@ -85,13 +85,115 @@ describe('checkAnswer', () => {
     expect(checkAnswer('40 adlaw', ['40'], false)).toBe(true);
     expect(checkAnswer('3000 ka tawo', ['3000'], false)).toBe(true);
     expect(checkAnswer('3,000', ['3000'], false)).toBe(true);
-    expect(checkAnswer('40 ka adlaw ug 40 ka gabii', ['40'], false)).toBe(true);
+    expect(checkAnswer('40 ka adlaw', ['40'], false)).toBe(true);
+    expect(checkAnswer('40 ka adlaw ug 40 ka gabii', ['40', '40 ka adlaw ug 40 ka gabii'], false)).toBe(true);
     expect(checkAnswer('40 o 50', ['40'], false)).toBe(false);
     expect(checkAnswer('9', ['99'], false)).toBe(false);
   });
   it('never fuzzes numbers', () => {
     expect(checkAnswer('9690', ['969'], true)).toBe(false);
     expect(checkAnswer('968', ['969'], true)).toBe(false);
+  });
+});
+
+describe('keyword matching', () => {
+  it('accepts the root of a word with a prefix or suffix, either way round', () => {
+    expect(checkAnswer('MAPAINUBSANON', ['PAGKAMAPAINUBSANON'], false)).toBe(true);
+    expect(checkAnswer('pagkamapainubsanon', ['mapainubsanon'], false)).toBe(true);
+    expect(checkAnswer('Saulo', ['Saul'], false)).toBe(false); // short names only take -ng; list variants instead
+    expect(checkAnswer('Saulo', ['Saul', 'Saulo'], false)).toBe(true);
+    expect(checkAnswer('pulang pisi', ['pula'], false)).toBe(true);
+  });
+  it('accepts filler words around the answer, but a name must stand on its own', () => {
+    expect(checkAnswer('Mao si Noe', ['Noe'], false)).toBe(true);
+    expect(checkAnswer('Si Noe ang naghimo', ['Noe'], false)).toBe(false);
+    expect(checkAnswer('dakong isda', ['isda'], false)).toBe(true);
+    expect(checkAnswer('sa langob sa mga leyon', ['langob sa mga leyon'], false)).toBe(true);
+  });
+  it('needs every keyword of the answer', () => {
+    expect(checkAnswer('langob', ['langob sa mga leyon'], false)).toBe(false);
+    expect(checkAnswer('Juan nga Tigbawtismo', ['Juan nga Tigbawtismo'], false)).toBe(true);
+  });
+  it('does not stretch roots too far', () => {
+    expect(checkAnswer('Ur', ['Uriah'], false)).toBe(false);
+    expect(checkAnswer('Eva', ['Evangelio'], false)).toBe(false);
+    expect(checkAnswer('pagka', ['pagkamapainubsanon'], false)).toBe(false);
+    expect(checkAnswer('inubsanon', ['pagkamapainubsanon'], false)).toBe(true); // pagka + ma + pa
+    expect(checkAnswer('sanon', ['pagkamapainubsanon'], false)).toBe(false);
+  });
+  it('rejects a list of guesses', () => {
+    expect(checkAnswer('Noe Moises Abraham Jacob', ['Noe'], false)).toBe(false);
+    expect(checkAnswer('Noe Moises', ['Noe'], false)).toBe(false);
+    expect(checkAnswer('Noe o Moises', ['Noe'], true)).toBe(false);
+    expect(checkAnswer('Ruth ug Naomi', ['Ruth', 'Rut'], true)).toBe(false);
+    expect(checkAnswer('Maria o Marta', ['Maria'], true)).toBe(false);
+    expect(checkAnswer('Maria, Marta', ['Maria'], true)).toBe(false);
+    expect(checkAnswer('Maria/Marta', ['Maria'], true)).toBe(false);
+    expect(checkAnswer('isda o balyena', ['isda'], true)).toBe(false);
+  });
+  it('rejects a negated answer', () => {
+    expect(checkAnswer('dili pula', ['pula'], true)).toBe(false);
+    expect(checkAnswer('wala mapainubsanon', ['PAGKAMAPAINUBSANON'], true)).toBe(false);
+  });
+  it('only treats real Cebuano affixes as the same root', () => {
+    expect(checkAnswer('maayo', ['pagkamaayohon'], false)).toBe(true);
+    expect(checkAnswer('painubsanon', ['PAGKAMAPAINUBSANON'], false)).toBe(true);
+    expect(checkAnswer('haligi nga asin', ['haliging asin'], false)).toBe(true);
+    expect(checkAnswer('Bathsheba', ['Sheba', 'Seba'], true)).toBe(false);
+    expect(checkAnswer('Batseba', ['Sheba', 'Seba'], true)).toBe(false);
+    expect(checkAnswer('Juana', ['Juan'], true)).toBe(false);
+    expect(checkAnswer('basin', ['asin'], true)).toBe(false);
+    expect(checkAnswer('Belte', ['Beltesazar'], true)).toBe(false);
+    expect(checkAnswer('Joke', ['Jokebed'], true)).toBe(false);
+    expect(checkAnswer('aria', ['Maria'], true)).toBe(false);
+  });
+  it('ignores hyphens and swapped verb prefixes', () => {
+    expect(checkAnswer('nag-ampo', ['pag-ampo'], false)).toBe(true);
+    expect(checkAnswer('ampo', ['pag-ampo'], false)).toBe(true);
+    expect(checkAnswer('mapainubsanon', ['pagka-mapainubsanon'], false)).toBe(true);
+    expect(checkAnswer('kalim-an', ['kaliman'], false)).toBe(true);
+    expect(checkAnswer('Miriam', ['Mariam'], false)).toBe(false);
+  });
+  it('reads spelled-out numbers by value', () => {
+    expect(checkAnswer('napulo ug duha', ['12'], false)).toBe(true);
+    expect(checkAnswer('kasiyaman ug siyam', ['99'], false)).toBe(true);
+    expect(checkAnswer('upat ka gatos ug kaliman', ['450'], false)).toBe(true);
+    expect(checkAnswer('tulo ka libo', ['3000'], false)).toBe(true);
+    expect(checkAnswer('nobenta y nuwebe', ['99'], false)).toBe(true);
+    expect(checkAnswer('forty days', ['40'], false)).toBe(true);
+    expect(checkAnswer('kuwarenta', ['40'], false)).toBe(true);
+    expect(checkAnswer('kuwatro sientos', ['4'], false)).toBe(false);
+    expect(checkAnswer('upat o lima', ['4'], false)).toBe(false);
+    expect(checkAnswer('dili 40', ['40'], false)).toBe(false);
+  });
+  it('does not count words repeated from the question as extra', () => {
+    const q = 'Kinsa ang gisugo ni Jehova nga maghimo ug dakong arka?';
+    expect(checkAnswer('Si Noe ang gisugo', ['Noe'], false, q)).toBe(true);
+    expect(checkAnswer('Oo, si Noe', ['Noe'], false, q)).toBe(true);
+    expect(checkAnswer('Noe Moises', ['Noe'], false, q)).toBe(false);
+  });
+  it('keeps short names from taking derivational endings', () => {
+    expect(checkAnswer('Sans', ['Sanson', 'Samson'], true)).toBe(false);
+    expect(checkAnswer('Jord', ['Jordan'], true)).toBe(false);
+    expect(checkAnswer('Adanan', ['Adan'], true)).toBe(false);
+  });
+  it('lets spelled-out numbers carry a unit and a typo', () => {
+    expect(checkAnswer('dose anyos', ['12', 'dose'], false)).toBe(true);
+    expect(checkAnswer('baynte ka pirasong silver', ['20', 'baynte'], false)).toBe(true);
+    expect(checkAnswer('kuwarinta', ['40', 'kuwarenta'], true)).toBe(true);
+    expect(checkAnswer('kuwarinta', ['40', 'kuwarenta'], false)).toBe(false);
+  });
+  it('keeps numbers exact', () => {
+    expect(checkAnswer('400 ka tawo', ['40'], false)).toBe(false);
+    expect(checkAnswer('kap-atan', ['kapatan'], false)).toBe(true);
+  });
+  it('matches spelled-out numbers word for word in number questions', () => {
+    const four = ['4', 'upat', 'kuwatro', 'upat ka tawo'];
+    expect(checkAnswer('kuwatro sientos', four, true)).toBe(false);
+    expect(checkAnswer('upat ka gatos', four, true)).toBe(false);
+    expect(checkAnswer('Upat', four, true)).toBe(true);
+    expect(checkAnswer('upat tawo', four, true)).toBe(true);
+    expect(checkAnswer('4 ka tawo', four, true)).toBe(true);
   });
 });
 
