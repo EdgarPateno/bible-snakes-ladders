@@ -29,6 +29,30 @@ describe('game flow', () => {
   beforeEach(() => useGame.getState().startGame(settings));
   afterEach(() => vi.restoreAllMocks());
 
+  it('never asks the same question twice in a game until all have been asked', () => {
+    const seen = new Set<string>();
+    for (let i = 0; i < settings.questions.length; i++) {
+      playTurn((i % 3) + 1, 'wrong'); // only 1–3 are rolled, so those numbers run out and borrow
+      const asked = useGame.getState().game!.asked!;
+      const id = asked[asked.length - 1];
+      expect(seen.has(id)).toBe(false);
+      seen.add(id);
+    }
+    expect(seen.size).toBe(settings.questions.length);
+  });
+
+  it('keeps a game saved before 2026-10-25 (per-number bags) playable without repeating its asked questions', () => {
+    const g = useGame.getState().game!;
+    const ones = settings.questions.filter((q) => q.diceNumber === 1).map((q) => q.id);
+    const { asked: _asked, ...old } = g;
+    useGame.setState({ game: { ...old, bags: { 1: ones.slice(0, 1) }, lastAsked: { 1: ones[1] } } });
+    playTurn(1, 'wrong');
+    // Only ones[0] was left in the old bag, so it is asked, and the other 15 count as already asked.
+    const asked = useGame.getState().game!.asked!;
+    expect(asked[asked.length - 1]).toBe(ones[0]);
+    expect([...asked].sort()).toEqual([...ones].sort());
+  });
+
   it('starts everyone off the board with the first player to roll', () => {
     const g = useGame.getState().game!;
     expect(g.phase).toBe('roll');

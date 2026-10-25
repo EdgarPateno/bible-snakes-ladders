@@ -3,7 +3,7 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 import type { AnswerOutcome, DiceNumber, GameState, LogEntry, Phase, Question, Settings } from '../types';
 import { BOARD_SIZES } from '../types';
 import { validateBoard } from '../logic/board';
-import { emptyBags, pickQuestion } from '../logic/questionPicker';
+import { askedFromBags, pickQuestion } from '../logic/questionPicker';
 import { buildMoveSteps } from '../logic/movement';
 import { nextTurnIndex, shuffleOrder } from '../logic/turns';
 import { safeStorage } from '../lib/storage';
@@ -80,7 +80,8 @@ export function isUsableGame(g: unknown): g is GameState {
   if (validateBoard(x.board).length) return false;
   if (!x.positions || x.order.some((id) => !Number.isInteger(x.positions[id]) || x.positions[id] < 0 || x.positions[id] > x.board.size)) return false;
   if (!Number.isInteger(x.current) || x.current < 0 || x.current >= x.order.length) return false;
-  if (!PHASES.includes(x.phase) || !Array.isArray(x.log) || !x.bags || typeof x.bags !== 'object') return false;
+  if (!PHASES.includes(x.phase) || !Array.isArray(x.log)) return false;
+  if (x.asked !== undefined && !(Array.isArray(x.asked) && x.asked.every((id) => typeof id === 'string'))) return false;
   return true;
 }
 
@@ -106,8 +107,7 @@ export const useGame = create<GameStore>()(
             askedAt: null,
             feedback: null,
             pendingMove: null,
-            bags: emptyBags(),
-            lastAsked: {},
+            asked: [],
             log: [],
             winnerId: null,
             turn: 1,
@@ -125,7 +125,7 @@ export const useGame = create<GameStore>()(
       rollLanded: (questions, exactFinish) => {
         const g = get().game;
         if (!g || g.phase !== 'rolling' || !g.roll) return;
-        const pick = pickQuestion(g.roll as DiceNumber, questions, g.bags, g.lastAsked);
+        const pick = pickQuestion(g.roll as DiceNumber, questions, g.asked ?? askedFromBags(g.bags, g.lastAsked, questions));
         if (!pick.question) {
           // No questions at all: let the roll count so the game can still be played.
           set({ game: { ...g, phase: 'question', questionId: null } });
@@ -133,7 +133,7 @@ export const useGame = create<GameStore>()(
           return;
         }
         set({
-          game: { ...g, phase: 'question', questionId: pick.question.id, askedAt: Date.now(), bags: pick.bags, lastAsked: pick.lastAsked },
+          game: { ...g, phase: 'question', questionId: pick.question.id, askedAt: Date.now(), asked: pick.asked, bags: undefined, lastAsked: undefined },
         });
       },
 

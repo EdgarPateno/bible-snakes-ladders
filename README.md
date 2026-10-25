@@ -2,7 +2,7 @@
 
 A classic snakes-and-ladders board game for the browser where every roll has to be earned: when the die lands, the player answers a Bible question tied to that number. A correct answer moves the token; a wrong one keeps it in place.
 
-The seed questions are written in Cebuano and taken from the book *Mga Leksiyon nga Imong Makat-onan Gikan sa Bibliya* (jw.org). There are 96 of them, 16 per dice number, easier on 1 and harder on 6, from 90 of the book's 103 lessons. Every question lists its lesson number and Bible reference, has a **Hint** button that names the lesson it comes from, and `research/questions-ceb-sources.md` quotes the lesson sentence that proves each answer.
+The seed questions are written in Cebuano and taken from the book *Mga Leksiyon nga Imong Makat-onan Gikan sa Bibliya* (jw.org). There are 96 of them, 16 per dice number, easier on 1 and harder on 6, from 90 of the book's 103 lessons. No question is asked twice in a game: when a number's questions run out, an unused one is borrowed from the number of the same difficulty (1–2, 3–4, 5–6), then the nearest number, until all 96 have been asked. Every question lists its lesson number and Bible reference, has a **Hint** button that names the lesson it comes from, and `research/questions-ceb-sources.md` quotes the lesson sentence that proves each answer.
 
 **Play it:** https://edgarpateno.github.io/bible-snakes-ladders/
 

@@ -1,49 +1,57 @@
 import type { DiceNumber, Question } from '../types';
-import { shuffle, type Rand } from '../lib/random';
-
-export type Bags = Record<DiceNumber, string[]>;
-
-export function emptyBags(): Bags {
-  return { 1: [], 2: [], 3: [], 4: [], 5: [], 6: [] };
-}
+import { DICE_NUMBERS } from '../types';
+import type { Rand } from '../lib/random';
 
 export interface PickResult {
   question: Question | null;
-  bags: Bags;
-  lastAsked: Partial<Record<DiceNumber, string>>;
-  /** True when the rolled number had no questions and one was borrowed from another number. */
+  /** Ids asked so far this game, including this one. */
+  asked: string[];
+  /** True when the question came from another dice number because the rolled one had none left. */
   borrowed: boolean;
 }
 
-export function pickQuestion(
-  dice: DiceNumber,
-  questions: Question[],
-  bags: Bags,
-  lastAsked: Partial<Record<DiceNumber, string>>,
-  rand: Rand = Math.random,
-): PickResult {
-  let pool = questions.filter((q) => q.diceNumber === dice);
-  let borrowed = false;
-  if (pool.length === 0) {
-    pool = questions;
-    borrowed = true;
-  }
-  if (pool.length === 0) return { question: null, bags, lastAsked, borrowed: false };
+/** The rolled number first, then the other number of the same difficulty (1-2, 3-4, 5-6), then the nearest numbers. */
+export function borrowOrder(dice: DiceNumber): DiceNumber[] {
+  const partner = (dice % 2 === 1 ? dice + 1 : dice - 1) as DiceNumber;
+  const rest = DICE_NUMBERS.filter((n) => n !== dice && n !== partner).sort((a, b) => Math.abs(a - dice) - Math.abs(b - dice) || a - b);
+  return [dice, partner, ...rest];
+}
 
-  const byId = new Map(pool.map((q) => [q.id, q]));
-  let bag = (bags[dice] ?? []).filter((id) => byId.has(id));
-  if (bag.length === 0) {
-    bag = shuffle([...byId.keys()], rand);
-    const last = lastAsked[dice];
-    if (bag.length > 1 && bag[0] === last) {
-      [bag[0], bag[bag.length - 1]] = [bag[bag.length - 1], bag[0]];
-    }
+/**
+ * Pick a question for the rolled number that has not been asked this game. When the rolled number has
+ * none left, borrow an unasked one from the closest number (see borrowOrder). Only after every question
+ * has been asked once does the list start over, never with the question just asked.
+ */
+export function pickQuestion(dice: DiceNumber, questions: Question[], asked: string[], rand: Rand = Math.random): PickResult {
+  if (questions.length === 0) return { question: null, asked, borrowed: false };
+  const used = new Set(asked);
+  let fresh = questions.filter((q) => !used.has(q.id));
+  let history = asked;
+  if (fresh.length === 0) {
+    const last = asked[asked.length - 1];
+    fresh = questions.length > 1 ? questions.filter((q) => q.id !== last) : questions;
+    history = [];
   }
-  const [id, ...rest] = bag;
-  return {
-    question: byId.get(id) ?? null,
-    bags: { ...bags, [dice]: rest },
-    lastAsked: { ...lastAsked, [dice]: id },
-    borrowed,
-  };
+  for (const n of borrowOrder(dice)) {
+    const pool = fresh.filter((q) => q.diceNumber === n);
+    if (pool.length === 0) continue;
+    const question = pool[Math.min(pool.length - 1, Math.floor(rand() * pool.length))];
+    return { question, asked: [...history, question.id], borrowed: n !== dice };
+  }
+  return { question: null, asked, borrowed: false };
+}
+
+/** Games saved before 2026-10-25 kept per-number bags of the ids still to ask; rebuild the asked list from them. */
+export function askedFromBags(
+  bags: Partial<Record<DiceNumber, string[]>> | undefined,
+  lastAsked: Partial<Record<DiceNumber, string>> | undefined,
+  questions: Question[],
+): string[] {
+  const asked = new Set(Object.values(lastAsked ?? {}).filter((id): id is string => typeof id === 'string'));
+  for (const n of DICE_NUMBERS) {
+    const left = bags?.[n];
+    if (!Array.isArray(left) || left.length === 0) continue;
+    for (const q of questions) if (q.diceNumber === n && !left.includes(q.id)) asked.add(q.id);
+  }
+  return [...asked];
 }

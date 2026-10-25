@@ -117,9 +117,11 @@ export interface GameState {
   askedAt: number | null;
   feedback: Feedback | null;
   pendingMove: PendingMove | null;
-  /** Remaining question ids per dice number, so nothing repeats until a pool is used up. */
-  bags: Record<DiceNumber, string[]>;
-  lastAsked: Partial<Record<DiceNumber, string>>;
+  /** Every question id asked this game, so no question is asked twice. Missing in games saved before 2026-10-25. */
+  asked?: string[];
+  /** Games saved before 2026-10-25 only: remaining ids per dice number. Read once to rebuild `asked`. */
+  bags?: Partial<Record<DiceNumber, string[]>>;
+  lastAsked?: Partial<Record<DiceNumber, string>>;
   log: LogEntry[];
   winnerId: string | null;
   turn: number;
