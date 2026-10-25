@@ -87,7 +87,7 @@ export function QuestionsImportDialog({ onClose }: { onClose: () => void }) {
           <p className="text-lg text-ink-soft">
             Use a JSON or CSV file exported from this game, or paste its text. CSV needs the columns{' '}
             <code className="rounded bg-walnut/10 px-1 text-base">diceNumber, question, acceptedAnswers</code> (optional:{' '}
-            <code className="rounded bg-walnut/10 px-1 text-base">id, reference, difficulty, explanation</code>). Separate
+            <code className="rounded bg-walnut/10 px-1 text-base">id, reference, difficulty, explanation, hint</code>). Separate
             several answers with “|”.
           </p>
 

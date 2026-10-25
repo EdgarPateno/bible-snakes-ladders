@@ -12,6 +12,8 @@ export interface Question {
   reference?: string;
   difficulty?: Difficulty;
   explanation?: string;
+  /** Shown on request while answering, e.g. the lesson the question comes from. */
+  hint?: string;
 }
 
 export interface Player {

@@ -51,6 +51,7 @@ export function QuestionEditor({ initial, defaultDice = 1, onClose }: QuestionEd
   const [reference, setReference] = useState(initial?.reference ?? '');
   const [difficulty, setDifficulty] = useState<DifficultyChoice>(initial?.difficulty ?? 'none');
   const [explanation, setExplanation] = useState(initial?.explanation ?? '');
+  const [hint, setHint] = useState(initial?.hint ?? '');
   const [submitted, setSubmitted] = useState(false);
 
   const answers = splitAnswers(answersText);
@@ -75,6 +76,7 @@ export function QuestionEditor({ initial, defaultDice = 1, onClose }: QuestionEd
     if (reference.trim()) q.reference = reference.trim();
     if (difficulty !== 'none') q.difficulty = difficulty;
     if (explanation.trim()) q.explanation = explanation.trim();
+    if (hint.trim()) q.hint = hint.trim();
     upsertQuestion(q);
     toast({ tone: 'success', title: isNew ? `Question added to ${dice}` : 'Question saved' });
     onClose();
@@ -196,6 +198,21 @@ export function QuestionEditor({ initial, defaultDice = 1, onClose }: QuestionEd
             value={explanation}
             rows={3}
             onChange={(e) => setExplanation(e.target.value)}
+            className={inputClass}
+          />
+        </div>
+
+        <div className="flex flex-col gap-1">
+          <label htmlFor="qe-hint" className="text-base font-semibold text-ink-soft">
+            Hint (optional, players can open it while answering)
+          </label>
+          <input
+            id="qe-hint"
+            type="text"
+            value={hint}
+            maxLength={200}
+            autoComplete="off"
+            onChange={(e) => setHint(e.target.value)}
             className={inputClass}
           />
         </div>

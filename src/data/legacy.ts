@@ -36,3 +36,23 @@ export function upgradeQuestions(questions: Question[]): Question[] {
     return untouched ? fresh : q;
   });
 }
+
+/** Built-in questions added on 2026-10-25 (ceb-1-09 … ceb-6-16), together with a lesson hint on every built-in question. */
+const ADDED_2026_10_25 = new Set(DEFAULT_QUESTIONS.filter((q) => Number(q.id.split('-')[2]) > 8).map((q) => q.id));
+
+/**
+ * One-time upgrade of settings saved before 2026-10-25. Only for a list that still holds built-in questions:
+ * a built-in whose text is unchanged gets its lesson hint, and the new built-in questions are added.
+ * A list of the host's own questions is left alone.
+ */
+export function addQuestionsOf20261025(questions: unknown): unknown {
+  if (!Array.isArray(questions)) return questions;
+  const defaults = new Map(DEFAULT_QUESTIONS.map((q) => [q.id, q]));
+  const ids = new Set(questions.map((q) => (q && typeof q === 'object' ? (q as { id?: unknown }).id : undefined)));
+  if (![...ids].some((id) => typeof id === 'string' && defaults.has(id) && !ADDED_2026_10_25.has(id))) return questions;
+  const withHints = questions.map((q) => {
+    const fresh = q && typeof q === 'object' ? defaults.get((q as Question).id) : undefined;
+    return fresh && (q as Question).question === fresh.question && (q as Question).hint === undefined ? { ...(q as Question), hint: fresh.hint } : q;
+  });
+  return [...withHints, ...DEFAULT_QUESTIONS.filter((q) => ADDED_2026_10_25.has(q.id) && !ids.has(q.id))];
+}

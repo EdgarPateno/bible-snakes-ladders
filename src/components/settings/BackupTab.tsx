@@ -121,7 +121,7 @@ export function BackupTab() {
               <code className="rounded bg-walnut/10 px-1">diceNumber</code> (1–6),{' '}
               <code className="rounded bg-walnut/10 px-1">question</code>,{' '}
               <code className="rounded bg-walnut/10 px-1">acceptedAnswers</code> (a list), and optional{' '}
-              <code className="rounded bg-walnut/10 px-1">reference, difficulty, explanation</code>.
+              <code className="rounded bg-walnut/10 px-1">reference, difficulty, explanation, hint</code>.
             </li>
             <li>
               <code className="rounded bg-walnut/10 px-1">board</code> —{' '}

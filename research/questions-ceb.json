@@ -11,7 +11,8 @@
         "Noah"
       ],
       "reference": "Leksiyon 5 · Genesis 6:1-22",
-      "explanation": "Gisugo ni Jehova si Noe nga maghimo ug arka aron maluwas siya ug ang iyang pamilya sa Lunop."
+      "explanation": "Gisugo ni Jehova si Noe nga maghimo ug arka aron maluwas siya ug ang iyang pamilya sa Lunop.",
+      "hint": "Leksiyon 5 — Arka ni Noe"
     },
     {
       "id": "ceb-1-02",
@@ -23,7 +24,8 @@
         "Adam"
       ],
       "reference": "Leksiyon 2 · Genesis 2:7-9, 15-23",
-      "explanation": "Si Adan ang unang tawo nga gibuhat ni Jehova gikan sa abog."
+      "explanation": "Si Adan ang unang tawo nga gibuhat ni Jehova gikan sa abog.",
+      "hint": "Leksiyon 2 — Gihimo sa Diyos ang Unang Lalaki ug Babaye"
     },
     {
       "id": "ceb-1-03",
@@ -35,7 +37,8 @@
         "Goliath"
       ],
       "reference": "Leksiyon 40 · 1 Samuel 17:1-54",
-      "explanation": "Si Goliat ang higante nga naigo sa bato ni David ug namatay."
+      "explanation": "Si Goliat ang higante nga naigo sa bato ni David ug namatay.",
+      "hint": "Leksiyon 40 — Si David ug Goliat"
     },
     {
       "id": "ceb-1-04",
@@ -48,7 +51,8 @@
         "dako nga isda"
       ],
       "reference": "Leksiyon 54 · Jonas 1:1–4:11",
-      "explanation": "Usa ka dakong isda ang gipadala ni Jehova nga milamoy kang Jonas."
+      "explanation": "Usa ka dakong isda ang gipadala ni Jehova nga milamoy kang Jonas.",
+      "hint": "Leksiyon 54 — Si Jehova Nagpailob Kang Jonas"
     },
     {
       "id": "ceb-1-05",
@@ -61,7 +65,8 @@
         "Belen"
       ],
       "reference": "Leksiyon 70 · Lucas 2:1-20",
-      "explanation": "Gipanganak si Jesus sa Betlehem, sa puy-anan sa mga hayop."
+      "explanation": "Gipanganak si Jesus sa Betlehem, sa puy-anan sa mga hayop.",
+      "hint": "Leksiyon 70 — Gipahibalo sa mga Anghel nga Natawo si Jesus"
     },
     {
       "id": "ceb-1-06",
@@ -80,7 +85,8 @@
         "lion's den"
       ],
       "reference": "Leksiyon 64 · Daniel 6:1-28",
-      "explanation": "Gihulog si Daniel sa langob sa mga leyon, pero gipanalipdan siya sa anghel ni Jehova."
+      "explanation": "Gihulog si Daniel sa langob sa mga leyon, pero gipanalipdan siya sa anghel ni Jehova.",
+      "hint": "Leksiyon 64 — Si Daniel Diha sa Langob sa mga Leyon"
     },
     {
       "id": "ceb-1-07",
@@ -93,7 +99,8 @@
         "Eve"
       ],
       "reference": "Leksiyon 2 · Genesis 2:7-9, 15-23",
-      "explanation": "Si Eva ang asawa ni Adan nga gihimo ni Jehova gikan sa gusok ni Adan."
+      "explanation": "Si Eva ang asawa ni Adan nga gihimo ni Jehova gikan sa gusok ni Adan.",
+      "hint": "Leksiyon 2 — Gihimo sa Diyos ang Unang Lalaki ug Babaye"
     },
     {
       "id": "ceb-1-08",
@@ -105,7 +112,119 @@
         "Mary"
       ],
       "reference": "Leksiyon 69 · Lucas 1:26-56",
-      "explanation": "Gibisita ni Gabriel si Maria ug giingnan nga siya ang mahimong inahan ni Jesus."
+      "explanation": "Gibisita ni Gabriel si Maria ug giingnan nga siya ang mahimong inahan ni Jesus.",
+      "hint": "Leksiyon 69 — Gibisita ni Gabriel si Maria"
+    },
+    {
+      "id": "ceb-1-09",
+      "diceNumber": 1,
+      "difficulty": "easy",
+      "question": "Unsang hayopa ang nakig-estorya kang Eva didto sa garden?",
+      "acceptedAnswers": [
+        "bitin",
+        "halas",
+        "serpent",
+        "snake"
+      ],
+      "reference": "Leksiyon 3 · Genesis 3:1-24",
+      "hint": "Leksiyon 3 — Si Adan ug Eva Wala Mosunod sa Diyos",
+      "explanation": "Usa ka daotang anghel, si Satanas nga Yawa, ang nagpasulti sa bitin aron ilaron si Eva."
+    },
+    {
+      "id": "ceb-1-10",
+      "diceNumber": 1,
+      "difficulty": "easy",
+      "question": "Kinsa ang anak ni Adan ug Eva nga nag-atiman ug mga karnero ug gipatay sa iyang magulang nga si Cain?",
+      "acceptedAnswers": [
+        "Abel"
+      ],
+      "reference": "Leksiyon 4 · Genesis 4:1-12",
+      "hint": "Leksiyon 4 — Nasuko ug Nakapatay",
+      "explanation": "Si Abel nag-atiman ug mga karnero, ug gipatay siya sa iyang magulang nga si Cain didto sa uma."
+    },
+    {
+      "id": "ceb-1-11",
+      "diceNumber": 1,
+      "difficulty": "easy",
+      "question": "Kinsa ang unang hari sa Israel?",
+      "acceptedAnswers": [
+        "Saul",
+        "Haring Saul"
+      ],
+      "reference": "Leksiyon 39 · 1 Samuel 9:15-17; 10:20-24",
+      "hint": "Leksiyon 39 — Ang Unang Hari sa Israel",
+      "explanation": "Giingnan ni Jehova si Samuel nga si Saul ang mahimong unang hari sa Israel."
+    },
+    {
+      "id": "ceb-1-12",
+      "diceNumber": 1,
+      "difficulty": "easy",
+      "question": "Kinsa ang apostoles nga mikanaog sa sakayan ug milakaw ibabaw sa tubig paingon kang Jesus?",
+      "acceptedAnswers": [
+        "Pedro",
+        "Simon Pedro",
+        "Peter"
+      ],
+      "reference": "Leksiyon 84 · Mateo 14:23-34",
+      "hint": "Leksiyon 84 — Si Jesus Milakaw sa Dagat",
+      "explanation": "Milakaw si Pedro ibabaw sa tubig, pero dihang mitan-aw siya sa bagyo nahadlok siya ug nag-anam siyag kaunlod."
+    },
+    {
+      "id": "ceb-1-13",
+      "diceNumber": 1,
+      "difficulty": "easy",
+      "question": "Kinsa ang gobernador nga misugot nga patyon si Jesus?",
+      "acceptedAnswers": [
+        "Pilato",
+        "Poncio Pilato",
+        "Pilate",
+        "Pontius Pilate"
+      ],
+      "reference": "Leksiyon 90 · Lucas 23:1-25",
+      "hint": "Leksiyon 90 — Si Jesus Namatay sa Golgotha",
+      "explanation": "Walay nakitang sala si Pilato kang Jesus, pero misugot siya nga patyon si Jesus tungod sa singgit sa mga tawo."
+    },
+    {
+      "id": "ceb-1-14",
+      "diceNumber": 1,
+      "difficulty": "easy",
+      "question": "Kinsa ang apostoles nga gitunolan ni Jesus ug tinapay ingong ilhanan nga siya ang motraydor kaniya?",
+      "acceptedAnswers": [
+        "Judas",
+        "Judas Iskariote",
+        "Judas Iscariote",
+        "Judas Iscariot"
+      ],
+      "reference": "Leksiyon 87 · Juan 13:1, 2, 26, 30",
+      "hint": "Leksiyon 87 — Ang Kataposang Panihapon ni Jesus",
+      "explanation": "Gitunolan ni Jesus ug tinapay si Judas Iskariote, ug dihadiha mitindog si Judas ug milakaw."
+    },
+    {
+      "id": "ceb-1-15",
+      "diceNumber": 1,
+      "difficulty": "easy",
+      "question": "Mahimong unsa ang yuta sa umaabot sumala sa saad ni Jehova?",
+      "acceptedAnswers": [
+        "paraiso",
+        "paradise"
+      ],
+      "reference": "Leksiyon 103 · Pinadayag 21:3, 4",
+      "hint": "Leksiyon 103 — “Paanhia ang Imong Gingharian”",
+      "explanation": "Hapit nang laglagon si Satanas ug ang tanang daotan, ug mahimo nang paraiso ang yuta."
+    },
+    {
+      "id": "ceb-1-16",
+      "diceNumber": 1,
+      "difficulty": "easy",
+      "question": "Unsay gihimo ni Jehova sa wala pa niya himoa ang mga butang nga makita?",
+      "acceptedAnswers": [
+        "anghel",
+        "mga anghel",
+        "angels"
+      ],
+      "reference": "Leksiyon 1 · Genesis 1:1-26",
+      "hint": "Leksiyon 1 — Gihimo sa Diyos ang Langit ug Yuta",
+      "explanation": "Sa wala pa himoa ni Jehova ang mga butang nga makita, naghimo siyag daghan kaayong anghel."
     },
     {
       "id": "ceb-2-01",
@@ -121,7 +240,8 @@
         "40 ka adlaw ug 40 ka gabii"
       ],
       "reference": "Leksiyon 6 · Genesis 7:1–9:17",
-      "explanation": "Nag-ulan sulod sa 40 ka adlaw ug 40 ka gabii sa dihang miabot ang Lunop."
+      "explanation": "Nag-ulan sulod sa 40 ka adlaw ug 40 ka gabii sa dihang miabot ang Lunop.",
+      "hint": "Leksiyon 6 — Walo ka Tawo Naluwas"
     },
     {
       "id": "ceb-2-02",
@@ -135,7 +255,8 @@
         "unang rainbow"
       ],
       "reference": "Leksiyon 6 · Genesis 7:1–9:17",
-      "explanation": "Gipakita ni Jehova ang rainbow ingong timaan nga dili na niya laglagon ang tawo pinaagig lunop."
+      "explanation": "Gipakita ni Jehova ang rainbow ingong timaan nga dili na niya laglagon ang tawo pinaagig lunop.",
+      "hint": "Leksiyon 6 — Walo ka Tawo Naluwas"
     },
     {
       "id": "ceb-2-03",
@@ -150,7 +271,8 @@
         "5 ka tinapay"
       ],
       "reference": "Leksiyon 83 · Juan 6:1-15",
-      "explanation": "Lima ka tinapay ug duha ka gagmayng isda lang ang naa, pero nabusog ang tanan."
+      "explanation": "Lima ka tinapay ug duha ka gagmayng isda lang ang naa, pero nabusog ang tanan.",
+      "hint": "Leksiyon 83 — Libolibo ang Gipakaon ni Jesus"
     },
     {
       "id": "ceb-2-04",
@@ -168,7 +290,8 @@
         "bush"
       ],
       "reference": "Leksiyon 18 · Exodo 3:1–4:20",
-      "explanation": "Nakita ni Moises ang tanom nga nagkalayo pero wala masunog, ug didto siya gisultihan ni Jehova."
+      "explanation": "Nakita ni Moises ang tanom nga nagkalayo pero wala masunog, ug didto siya gisultihan ni Jehova.",
+      "hint": "Leksiyon 18 — Tanom nga Nagkalayo"
     },
     {
       "id": "ceb-2-05",
@@ -182,7 +305,8 @@
         "Pula nga Dagat"
       ],
       "reference": "Leksiyon 22 · Exodo 13:21–15:21",
-      "explanation": "Gitunga ni Jehova ang Pulang Dagat ug mitabok ang mga Israelinhon sa uga nga dalan."
+      "explanation": "Gitunga ni Jehova ang Pulang Dagat ug mitabok ang mga Israelinhon sa uga nga dalan.",
+      "hint": "Leksiyon 22 — Milagro Didto sa Pulang Dagat"
     },
     {
       "id": "ceb-2-06",
@@ -194,7 +318,8 @@
         "Sanson"
       ],
       "reference": "Leksiyon 38 · Maghuhukom 13:1–16:31",
-      "explanation": "Si Samson nawad-an ug kusog dihang gipaputlan ni Delila ang iyang buhok."
+      "explanation": "Si Samson nawad-an ug kusog dihang gipaputlan ni Delila ang iyang buhok.",
+      "hint": "Leksiyon 38 — Si Samson Gihimong Kusgan ni Jehova"
     },
     {
       "id": "ceb-2-07",
@@ -210,7 +335,8 @@
         "John the Baptist"
       ],
       "reference": "Leksiyon 74 · Mateo 3:13-17",
-      "explanation": "Si Juan ang mituslob kang Jesus sa tubig sa Suba sa Jordan."
+      "explanation": "Si Juan ang mituslob kang Jesus sa tubig sa Suba sa Jordan.",
+      "hint": "Leksiyon 74 — Si Jesus Nahimong Mesiyas"
     },
     {
       "id": "ceb-2-08",
@@ -222,7 +348,123 @@
         "Lazarus"
       ],
       "reference": "Leksiyon 86 · Juan 11:1-53",
-      "explanation": "Gibanhaw ni Jesus si Lazaro ug migawas siya sa lubnganan."
+      "explanation": "Gibanhaw ni Jesus si Lazaro ug migawas siya sa lubnganan.",
+      "hint": "Leksiyon 86 — Gibanhaw ni Jesus si Lazaro"
+    },
+    {
+      "id": "ceb-2-09",
+      "diceNumber": 2,
+      "difficulty": "easy",
+      "question": "Nahimong unsa ang tubig sa Suba sa Nilo dihang gibunal ni Aaron ang iyang sungkod?",
+      "acceptedAnswers": [
+        "dugo",
+        "blood"
+      ],
+      "reference": "Leksiyon 19 · Exodo 7:8–8:19",
+      "hint": "Leksiyon 19 — Ang Unang Tulo ka Silot",
+      "explanation": "Nahimong dugo ang Suba sa Nilo, namatay ang mga isda, ug dili na mainom ang tubig."
+    },
+    {
+      "id": "ceb-2-10",
+      "diceNumber": 2,
+      "difficulty": "easy",
+      "question": "Unsang hayopa ang estatuwa nga gihimo ni Aaron gikan sa bulawan sa katawhan?",
+      "acceptedAnswers": [
+        "baka",
+        "bulawang baka",
+        "baka nga bulawan",
+        "nati",
+        "calf",
+        "golden calf"
+      ],
+      "reference": "Leksiyon 24 · Exodo 32:1-30",
+      "hint": "Leksiyon 24 — Wala Sila Motuman sa Saad",
+      "explanation": "Gitunaw ni Aaron ang bulawan ug gihimo kining estatuwa nga baka, ug gisimba kini sa katawhan."
+    },
+    {
+      "id": "ceb-2-11",
+      "diceNumber": 2,
+      "difficulty": "easy",
+      "question": "Unsay ngalan sa anak nga lalaki nga gihatag ni Jehova kang Ana human siya miampo?",
+      "acceptedAnswers": [
+        "Samuel"
+      ],
+      "reference": "Leksiyon 35 · 1 Samuel 1:1–2:11",
+      "hint": "Leksiyon 35 — Si Ana Miampo nga Hatagan Siyag Anak",
+      "explanation": "Gitubag ni Jehova ang pag-ampo ni Ana, ug iyang ginganlan ang iyang anak ug Samuel."
+    },
+    {
+      "id": "ceb-2-12",
+      "diceNumber": 2,
+      "difficulty": "easy",
+      "question": "Unsang hayopa ang gihalad ni Abraham puli kang Isaac?",
+      "acceptedAnswers": [
+        "karnero",
+        "laking karnero",
+        "ram",
+        "sheep"
+      ],
+      "reference": "Leksiyon 11 · Genesis 22:1-18",
+      "hint": "Leksiyon 11 — Gisulayan ang Pagtuo",
+      "explanation": "Nakakita si Abraham ug karnero nga nasangit ang sungay sa kahoykahoy, ug kini ang iyang gihalad puli kang Isaac."
+    },
+    {
+      "id": "ceb-2-13",
+      "diceNumber": 2,
+      "difficulty": "easy",
+      "question": "Unsay gihangyo ni Josue kang Jehova nga pahunongon aron mapildi nila ang mga Canaanhon?",
+      "acceptedAnswers": [
+        "adlaw",
+        "ang adlaw",
+        "sun"
+      ],
+      "reference": "Leksiyon 31 · Josue 10:1-15",
+      "hint": "Leksiyon 31 — Si Josue ug ang mga Gabaonhon",
+      "explanation": "May pagsalig si Josue kang Jehova, ug wala mosalop ang adlaw hangtod napildi ang mga Canaanhon."
+    },
+    {
+      "id": "ceb-2-14",
+      "diceNumber": 2,
+      "difficulty": "easy",
+      "question": "Unsay trabaho ni Pedro, Andres, Santiago, ug Juan dihang gidapit sila ni Jesus?",
+      "acceptedAnswers": [
+        "mangingisda",
+        "mananagat",
+        "nangisda",
+        "fisherman",
+        "fishermen"
+      ],
+      "reference": "Leksiyon 78 · Marcos 1:14-20",
+      "hint": "Leksiyon 78 — Gisangyaw ni Jesus ang Mensahe sa Gingharian",
+      "explanation": "Mga mangingisda sila, ug giingnan sila ni Jesus: ‘Himoon mo nakong mangingisdag tawo.’"
+    },
+    {
+      "id": "ceb-2-15",
+      "diceNumber": 2,
+      "difficulty": "easy",
+      "question": "Kompletoha ang pag-ampo nga gitudlo ni Jesus: “___ namo nga anaa sa mga langit, balaanon unta ang imong ngalan.”",
+      "acceptedAnswers": [
+        "Amahan",
+        "Amahan namo",
+        "Father"
+      ],
+      "reference": "Leksiyon 82 · Mateo 6:2-18",
+      "hint": "Leksiyon 82 — Gitudloan ni Jesus ang mga Tinun-an kon Unsaon Pag-ampo",
+      "explanation": "Gitudloan ni Jesus ang iyang mga tinun-an nga moampo: “Amahan namo nga anaa sa mga langit, balaanon unta ang imong ngalan.”"
+    },
+    {
+      "id": "ceb-2-16",
+      "diceNumber": 2,
+      "difficulty": "easy",
+      "question": "Unsang metal ang ulo sa dakong estatuwa nga nakita ni Nabucodonosor sa iyang damgo?",
+      "acceptedAnswers": [
+        "bulawan",
+        "gold",
+        "oro"
+      ],
+      "reference": "Leksiyon 60 · Daniel 2:1-49",
+      "hint": "Leksiyon 60 — Gingharian nga Walay Kataposan",
+      "explanation": "Ang bulawan nga ulo sa estatuwa nagrepresentar sa gingharian ni Nabucodonosor."
     },
     {
       "id": "ceb-3-01",
@@ -233,7 +475,8 @@
         "Babel"
       ],
       "reference": "Leksiyon 7 · Genesis 11:1-9",
-      "explanation": "Ang siyudad gitawag ug Babel, nga nagkahulogan ug \"Kalibog.\""
+      "explanation": "Ang siyudad gitawag ug Babel, nga nagkahulogan ug \"Kalibog.\"",
+      "hint": "Leksiyon 7 — Torre sa Babel"
     },
     {
       "id": "ceb-3-02",
@@ -244,7 +487,8 @@
         "Ur"
       ],
       "reference": "Leksiyon 8 · Genesis 11:29–12:9",
-      "explanation": "Si Abraham nagpuyo sa Ur, diin daghan ang nagsimba ug ubang diyos."
+      "explanation": "Si Abraham nagpuyo sa Ur, diin daghan ang nagsimba ug ubang diyos.",
+      "hint": "Leksiyon 8 — Si Abraham ug Sara Misunod sa Diyos"
     },
     {
       "id": "ceb-3-03",
@@ -259,7 +503,8 @@
         "estatuwa nga asin"
       ],
       "reference": "Leksiyon 10 · Genesis 19:1-26",
-      "explanation": "Ang asawa ni Lot milingi ug nahimong haliging asin."
+      "explanation": "Ang asawa ni Lot milingi ug nahimong haliging asin.",
+      "hint": "Leksiyon 10 — Hinumdomi ang Asawa ni Lot"
     },
     {
       "id": "ceb-3-04",
@@ -270,7 +515,8 @@
         "Esau"
       ],
       "reference": "Leksiyon 12 · Genesis 25:20-34",
-      "explanation": "Si Esau ang magulang nga kaluha ni Jacob."
+      "explanation": "Si Esau ang magulang nga kaluha ni Jacob.",
+      "hint": "Leksiyon 12 — Si Jacob ang Nakadawat sa Panulondon"
     },
     {
       "id": "ceb-3-05",
@@ -284,7 +530,8 @@
         "20 ka pirasong silver"
       ],
       "reference": "Leksiyon 14 · Genesis 37:1-36",
-      "explanation": "Gibaligya si Jose sa iyang mga igsoon ug 20 ka pirasong silver."
+      "explanation": "Gibaligya si Jose sa iyang mga igsoon ug 20 ka pirasong silver.",
+      "hint": "Leksiyon 14 — Sulugoon nga Matinumanon sa Diyos"
     },
     {
       "id": "ceb-3-06",
@@ -295,7 +542,8 @@
         "Miriam"
       ],
       "reference": "Leksiyon 17 · Exodo 2:1-15",
-      "explanation": "Si Miriam ang igsoon ni Moises nga nagbantay sa basket diha sa suba."
+      "explanation": "Si Miriam ang igsoon ni Moises nga nagbantay sa basket diha sa suba.",
+      "hint": "Leksiyon 17 — Gipili ni Moises nga Simbahon si Jehova"
     },
     {
       "id": "ceb-3-07",
@@ -308,7 +556,8 @@
         "red"
       ],
       "reference": "Leksiyon 30 · Josue 2:1-24",
-      "explanation": "Gihikot ni Rahab ang pula nga pisi aron maluwas ang iyang pamilya."
+      "explanation": "Gihikot ni Rahab ang pula nga pisi aron maluwas ang iyang pamilya.",
+      "hint": "Leksiyon 30 — Gitagoan ni Rahab ang mga Espiya"
     },
     {
       "id": "ceb-3-08",
@@ -323,7 +572,117 @@
         "upat ka tawo"
       ],
       "reference": "Leksiyon 61 · Daniel 3:1-30",
-      "explanation": "Tulo ra ang gilabay sa kalayo, pero upat ang nakita sa hari."
+      "explanation": "Tulo ra ang gilabay sa kalayo, pero upat ang nakita sa hari.",
+      "hint": "Leksiyon 61 — Wala Sila Moyukbo"
+    },
+    {
+      "id": "ceb-3-09",
+      "diceNumber": 3,
+      "difficulty": "medium",
+      "question": "Kinsa ang kamanghorang anak ni Jacob kansang sako gibutangan ni Jose sa iyang kopa nga silver?",
+      "acceptedAnswers": [
+        "Benjamin"
+      ],
+      "reference": "Leksiyon 15 · Genesis 40:1–45:28",
+      "hint": "Leksiyon 15 — Wala Gyod Malimot si Jehova Kang Jose",
+      "explanation": "Gisulayan ni Jose ang iyang mga igsoon pinaagi sa pagbutang sa iyang kopa nga silver sa sako ni Benjamin."
+    },
+    {
+      "id": "ceb-3-10",
+      "diceNumber": 3,
+      "difficulty": "medium",
+      "question": "Unsay tawag sa espesyal nga panihapon nga himoon sa mga Israelinhon kada tuig aron mahinumdoman ang ilang pagkaluwas sa Ehipto?",
+      "acceptedAnswers": [
+        "Paskuwa",
+        "Paskwa",
+        "Passover"
+      ],
+      "reference": "Leksiyon 21 · Exodo 11:1–12:42",
+      "hint": "Leksiyon 21 — Ang Ikanapulo nga Silot",
+      "explanation": "Kada tuig himoon sa mga Israelinhon ang Paskuwa aron mahinumdoman kon giunsa sila pagluwas ni Jehova."
+    },
+    {
+      "id": "ceb-3-11",
+      "diceNumber": 3,
+      "difficulty": "medium",
+      "question": "Asang bukid nagkampo ang mga Israelinhon mga duha ka bulan human sila mobiya sa Ehipto?",
+      "acceptedAnswers": [
+        "Sinai",
+        "Bukid sa Sinai",
+        "Mount Sinai"
+      ],
+      "reference": "Leksiyon 23 · Exodo 19:1–20:21",
+      "hint": "Leksiyon 23 — Ang Ilang Saad Kang Jehova",
+      "explanation": "Didto sa Bukid sa Sinai, misaad ang mga Israelinhon nga buhaton nila ang tanan nga isulti ni Jehova."
+    },
+    {
+      "id": "ceb-3-12",
+      "diceNumber": 3,
+      "difficulty": "medium",
+      "question": "Kinsa ang hataas nga saserdote nga mao lang ang puwedeng mosulod sa Labing Balaan sa tabernakulo?",
+      "acceptedAnswers": [
+        "Aaron",
+        "Aron"
+      ],
+      "reference": "Leksiyon 25 · Exodo 25:1-9; Hebreohanon 9:1-7",
+      "hint": "Leksiyon 25 — Tabernakulo Para sa Pagsimba",
+      "explanation": "Ang hataas nga saserdote nga si Aaron mosulod sa Labing Balaan kas-a kada tuig aron motanyag ug halad."
+    },
+    {
+      "id": "ceb-3-13",
+      "diceNumber": 3,
+      "difficulty": "medium",
+      "question": "Kinsa ang espiya nga kauban ni Josue nga miingon: ‘Mapildi nato sila’?",
+      "acceptedAnswers": [
+        "Caleb",
+        "Kaleb"
+      ],
+      "reference": "Leksiyon 26 · Numeros 13:1–14:38",
+      "hint": "Leksiyon 26 — Dose ka Espiya",
+      "explanation": "Si Caleb ug si Josue may pagsalig kang Jehova, busa sila lang sa 12 ka espiya ang nag-ingon nga mapildi nila ang Canaan."
+    },
+    {
+      "id": "ceb-3-14",
+      "diceNumber": 3,
+      "difficulty": "medium",
+      "question": "Sa ikapila ka higayon nga nadungog ni Samuel ang tingog nakahunahuna si Eli nga si Jehova ang nagtawag kaniya?",
+      "acceptedAnswers": [
+        "ikatulo",
+        "ikatulong higayon",
+        "3",
+        "tulo",
+        "tres"
+      ],
+      "reference": "Leksiyon 37 · 1 Samuel 3:1-21",
+      "hint": "Leksiyon 37 — Nakig-estorya si Jehova Kang Samuel",
+      "explanation": "Sa ikatulong higayon, nakahunahuna si Eli nga si Jehova ang nagtawag kang Samuel."
+    },
+    {
+      "id": "ceb-3-15",
+      "diceNumber": 3,
+      "difficulty": "medium",
+      "question": "Unsang instrumento ang maayo kaayong tugtogon ni David?",
+      "acceptedAnswers": [
+        "alpa",
+        "arpa",
+        "harp"
+      ],
+      "reference": "Leksiyon 41 · 1 Samuel 16:14-23; 18:5-16",
+      "hint": "Leksiyon 41 — Si David ug Saul",
+      "explanation": "Maayo kaayong motugtog ug alpa si David, pero gilabay siyag bangkaw ni Saul samtang nagtugtog siya."
+    },
+    {
+      "id": "ceb-3-16",
+      "diceNumber": 3,
+      "difficulty": "medium",
+      "question": "Kinsa ang gisugo ni Jehova nga mopuli kang Elias ingong propeta?",
+      "acceptedAnswers": [
+        "Eliseo",
+        "Elisha"
+      ],
+      "reference": "Leksiyon 47 · 1 Hari 19:1-18",
+      "hint": "Leksiyon 47 — Gitabangan ni Jehova si Elias",
+      "explanation": "Giingnan ni Jehova si Elias nga pahibaloon si Eliseo nga siya ang mopuli niya nga propeta."
     },
     {
       "id": "ceb-4-01",
@@ -335,7 +694,8 @@
         "Rut"
       ],
       "reference": "Leksiyon 33 · Ruth 1:1–4:22",
-      "explanation": "Giminyoan ni Boaz si Ruth, ug ang ilang anak nga si Obed nahimong lolo ni Haring David."
+      "explanation": "Giminyoan ni Boaz si Ruth, ug ang ilang anak nga si Obed nahimong lolo ni Haring David.",
+      "hint": "Leksiyon 33 — Si Ruth ug Noemi"
     },
     {
       "id": "ceb-4-02",
@@ -349,7 +709,8 @@
         "300 ka sundalo"
       ],
       "reference": "Leksiyon 34 · Maghuhukom 6:36–7:25",
-      "explanation": "Gipaubsan ni Jehova ang kasundalohan ni Gideon hangtod 300 na lang."
+      "explanation": "Gipaubsan ni Jehova ang kasundalohan ni Gideon hangtod 300 na lang.",
+      "hint": "Leksiyon 34 — Napildi ni Gideon ang mga Midianhon"
     },
     {
       "id": "ceb-4-03",
@@ -362,7 +723,8 @@
         "Jordan River"
       ],
       "reference": "Leksiyon 51 · 2 Hari 5:1-19",
-      "explanation": "Milusbog si Naaman sa Suba sa Jordan ug pito ka beses ug naayo siya."
+      "explanation": "Milusbog si Naaman sa Suba sa Jordan ug pito ka beses ug naayo siya.",
+      "hint": "Leksiyon 51 — Ang Sundalo ug ang Batang Babaye"
     },
     {
       "id": "ceb-4-04",
@@ -375,7 +737,8 @@
         "Nineveh"
       ],
       "reference": "Leksiyon 54 · Jonas 1:1–4:11",
-      "explanation": "Gisugo ni Jehova si Jonas nga moadto sa Nineve aron pasidan-an ang mga tawo."
+      "explanation": "Gisugo ni Jehova si Jonas nga moadto sa Nineve aron pasidan-an ang mga tawo.",
+      "hint": "Leksiyon 54 — Si Jehova Nagpailob Kang Jonas"
     },
     {
       "id": "ceb-4-05",
@@ -388,7 +751,8 @@
         "Egypt"
       ],
       "reference": "Leksiyon 71 · Mateo 2:1-23",
-      "explanation": "Mikalagiw si Jose ug ang iyang pamilya ngadto sa Ehipto."
+      "explanation": "Mikalagiw si Jose ug ang iyang pamilya ngadto sa Ehipto.",
+      "hint": "Leksiyon 71 — Gipanalipdan ni Jehova si Jesus"
     },
     {
       "id": "ceb-4-06",
@@ -402,7 +766,8 @@
         "12 anyos"
       ],
       "reference": "Leksiyon 72 · Lucas 2:40-52",
-      "explanation": "Dose anyos si Jesus dihang nagpabilin siya sa templo sa Jerusalem."
+      "explanation": "Dose anyos si Jesus dihang nagpabilin siya sa templo sa Jerusalem.",
+      "hint": "Leksiyon 72 — Ang Bata nga si Jesus"
     },
     {
       "id": "ceb-4-07",
@@ -414,7 +779,8 @@
         "atabay ni Jacob"
       ],
       "reference": "Leksiyon 77 · Juan 4:1-42",
-      "explanation": "Mipahulay si Jesus sa atabay ni Jacob duol sa siyudad sa Sikar."
+      "explanation": "Mipahulay si Jesus sa atabay ni Jacob duol sa siyudad sa Sikar.",
+      "hint": "Leksiyon 77 — Ang Babaye sa Atabay"
     },
     {
       "id": "ceb-4-08",
@@ -427,7 +793,125 @@
         "rooster"
       ],
       "reference": "Leksiyon 89 · Mateo 26:31-35, 57–27:2",
-      "explanation": "Mituktugaok ang manok, ug nahinumdoman ni Pedro ang gisulti ni Jesus."
+      "explanation": "Mituktugaok ang manok, ug nahinumdoman ni Pedro ang gisulti ni Jesus.",
+      "hint": "Leksiyon 89 — Wala Ilha ni Pedro si Jesus"
+    },
+    {
+      "id": "ceb-4-09",
+      "diceNumber": 4,
+      "difficulty": "medium",
+      "question": "Pila ang edad ni Josias dihang nahimo siyang hari sa Juda?",
+      "acceptedAnswers": [
+        "8",
+        "otso",
+        "walo",
+        "8 anyos"
+      ],
+      "reference": "Leksiyon 56 · 2 Hari 22:1–23:30",
+      "hint": "Leksiyon 56 — Gimahal ni Josias ang Balaod sa Diyos",
+      "explanation": "Otso anyos si Josias dihang nahimo siyang hari, ug gimahal niya ang Balaod sa Diyos."
+    },
+    {
+      "id": "ceb-4-10",
+      "diceNumber": 4,
+      "difficulty": "medium",
+      "question": "Gikan sa balhibo sa unsang hayopa gihimo ang sinina ni Juan nga Tigbawtismo?",
+      "acceptedAnswers": [
+        "kamelyo",
+        "camel"
+      ],
+      "reference": "Leksiyon 73 · Mateo 3:1-11",
+      "hint": "Leksiyon 73 — Giandam ni Juan ang Pag-abot ni Jesus",
+      "explanation": "Simple ang kinabuhi ni Juan: hinimo sa balhibo sa kamelyo ang iyang sinina, ug dulon ug dugos ang iyang pagkaon."
+    },
+    {
+      "id": "ceb-4-11",
+      "diceNumber": 4,
+      "difficulty": "medium",
+      "question": "Unsay gihagit sa Yawa kang Jesus nga himoon niyang tinapay?",
+      "acceptedAnswers": [
+        "bato",
+        "mga bato",
+        "stones"
+      ],
+      "reference": "Leksiyon 75 · Mateo 4:1-11",
+      "hint": "Leksiyon 75 — Si Jesus Gitental sa Yawa",
+      "explanation": "Gihagit sa Yawa si Jesus nga himoong tinapay ang mga bato, pero mitubag si Jesus gamit ang Kasulatan."
+    },
+    {
+      "id": "ceb-4-12",
+      "diceNumber": 4,
+      "difficulty": "medium",
+      "question": "Unsay gihimo ni Jesus sa tibuok gabii didto sa bukid sa wala pa niya pilia ang 12 ka apostoles?",
+      "acceptedAnswers": [
+        "nag-ampo",
+        "miampo",
+        "pag-ampo",
+        "ampo",
+        "prayed"
+      ],
+      "reference": "Leksiyon 80 · Lucas 6:12-16",
+      "hint": "Leksiyon 80 — Si Jesus Mipilig Dose ka Apostoles",
+      "explanation": "Gusto ni Jesus nga magpagiya kang Jehova, busa nag-inusara siyang nag-ampo sa tibuok gabii."
+    },
+    {
+      "id": "ceb-4-13",
+      "diceNumber": 4,
+      "difficulty": "medium",
+      "question": "Unsay giingon ni Jesus nga tan-awon nato kay kanunayng giseguro sa Diyos nga naa silay pagkaon?",
+      "acceptedAnswers": [
+        "langgam",
+        "mga langgam",
+        "birds"
+      ],
+      "reference": "Leksiyon 81 · Mateo 6:19-34",
+      "hint": "Leksiyon 81 — Ang Wali sa Bukid",
+      "explanation": "Gitudlo ni Jesus nga dili ta angayng mabalaka kay kabalo si Jehova kon unsay atong gikinahanglan."
+    },
+    {
+      "id": "ceb-4-14",
+      "diceNumber": 4,
+      "difficulty": "medium",
+      "question": "Asang gardena miadto si Jesus ug ang iyang mga apostoles sa gabii nga gidakop siya?",
+      "acceptedAnswers": [
+        "Getsemane",
+        "Gethsemane",
+        "garden sa Getsemane"
+      ],
+      "reference": "Leksiyon 88 · Mateo 26:36-57",
+      "hint": "Leksiyon 88 — Gidakop si Jesus",
+      "explanation": "Miampo si Jesus didto sa garden sa Getsemane, ug didto siya gitraydoran ni Judas pinaagi sa halok."
+    },
+    {
+      "id": "ceb-4-15",
+      "diceNumber": 4,
+      "difficulty": "medium",
+      "question": "Asang bahina sa sakayan gisugo ni Jesus nga itaktak sa mga mangingisda ang ilang pukot?",
+      "acceptedAnswers": [
+        "tuo",
+        "tuong bahin",
+        "tuo nga bahin",
+        "right",
+        "right side"
+      ],
+      "reference": "Leksiyon 92 · Juan 21:1-19",
+      "hint": "Leksiyon 92 — Nagpakita si Jesus sa mga Mangingisda",
+      "explanation": "Dihang gitaktak nila ang pukot sa tuong bahin sa sakayan, napuno kini ug isda."
+    },
+    {
+      "id": "ceb-4-16",
+      "diceNumber": 4,
+      "difficulty": "medium",
+      "question": "Asang bukid nakigkita si Jesus sa iyang mga apostoles sa kataposang higayon sa wala pa siya mosaka sa langit?",
+      "acceptedAnswers": [
+        "Bukid sa mga Olibo",
+        "Olibo",
+        "Olivo",
+        "Mount of Olives"
+      ],
+      "reference": "Leksiyon 93 · Buhat 1:2-14",
+      "hint": "Leksiyon 93 — Mibalik si Jesus sa Langit",
+      "explanation": "Didto sa Bukid sa mga Olibo, misaka si Jesus sa langit ug natabonan siya sa panganod."
     },
     {
       "id": "ceb-5-01",
@@ -441,7 +925,8 @@
         "99 anyos"
       ],
       "reference": "Leksiyon 9 · Genesis 18:1-15",
-      "explanation": "Si Abraham 99 anyos ug si Sara 89 dihang miabot ang mga anghel."
+      "explanation": "Si Abraham 99 anyos ug si Sara 89 dihang miabot ang mga anghel.",
+      "hint": "Leksiyon 9 — May Anak na Sila!"
     },
     {
       "id": "ceb-5-02",
@@ -455,7 +940,8 @@
         "400 ka tawo"
       ],
       "reference": "Leksiyon 13 · Genesis 33:1-18",
-      "explanation": "Si Esau miabot uban ang 400 ka tawo, pero nakig-uli siya kang Jacob."
+      "explanation": "Si Esau miabot uban ang 400 ka tawo, pero nakig-uli siya kang Jacob.",
+      "hint": "Leksiyon 13 — Maayo nag Relasyon si Jacob ug Esau"
     },
     {
       "id": "ceb-5-03",
@@ -466,7 +952,8 @@
         "Uz"
       ],
       "reference": "Leksiyon 16 · Job 1:1–3:26",
-      "explanation": "Si Job nagpuyo sa Uz ug nagsimba kang Jehova."
+      "explanation": "Si Job nagpuyo sa Uz ug nagsimba kang Jehova.",
+      "hint": "Leksiyon 16 — Kinsa si Job?"
     },
     {
       "id": "ceb-5-04",
@@ -479,7 +966,8 @@
         "Jocabed"
       ],
       "reference": "Leksiyon 17 · Exodo 2:1-15",
-      "explanation": "Si Jokebed ang inahan ni Moises nga nagtago kaniya sa basket."
+      "explanation": "Si Jokebed ang inahan ni Moises nga nagtago kaniya sa basket.",
+      "hint": "Leksiyon 17 — Gipili ni Moises nga Simbahon si Jehova"
     },
     {
       "id": "ceb-5-05",
@@ -492,7 +980,8 @@
         "Haring Balak"
       ],
       "reference": "Leksiyon 28 · Numeros 22:1–24:25",
-      "explanation": "Si Haring Balak sa Moab ang nagpatawag kang Balaam."
+      "explanation": "Si Haring Balak sa Moab ang nagpatawag kang Balaam.",
+      "hint": "Leksiyon 28 — Asno ni Balaam Misulti"
     },
     {
       "id": "ceb-5-06",
@@ -506,7 +995,8 @@
         "450 ka propeta"
       ],
       "reference": "Leksiyon 46 · 1 Hari 18:1, 2, 17-46",
-      "explanation": "Si Elias nakigsangka sa 450 ka propeta ni Baal, ug si Jehova ang mitubag pinaagig kalayo."
+      "explanation": "Si Elias nakigsangka sa 450 ka propeta ni Baal, ug si Jehova ang mitubag pinaagig kalayo.",
+      "hint": "Leksiyon 46 — Talagsaong Hitabo sa Bukid sa Carmelo"
     },
     {
       "id": "ceb-5-07",
@@ -519,7 +1009,8 @@
         "Mordecai"
       ],
       "reference": "Leksiyon 65 · Ester 2:5-20",
-      "explanation": "Si Mardokeo ang ig-agaw ni Ester nga nagpadako kaniya."
+      "explanation": "Si Mardokeo ang ig-agaw ni Ester nga nagpadako kaniya.",
+      "hint": "Leksiyon 65 — Giluwas ni Ester ang Iyang Katawhan"
     },
     {
       "id": "ceb-5-08",
@@ -532,7 +1023,118 @@
         "Zechariah"
       ],
       "reference": "Leksiyon 68 · Lucas 1:5-25, 57-79",
-      "explanation": "Si Zacarias ang saserdote nga bana ni Elisabet."
+      "explanation": "Si Zacarias ang saserdote nga bana ni Elisabet.",
+      "hint": "Leksiyon 68 — Nanganak si Elisabet"
+    },
+    {
+      "id": "ceb-5-09",
+      "diceNumber": 5,
+      "difficulty": "hard",
+      "question": "Unsay ngalan sa lugar sa Ehipto nga gipuy-an sa mga Israelinhon diin walay langaw?",
+      "acceptedAnswers": [
+        "Gosen",
+        "Goshen"
+      ],
+      "reference": "Leksiyon 20 · Exodo 8:20–10:29",
+      "hint": "Leksiyon 20 — Ang Sunod nga Unom ka Silot",
+      "explanation": "Sugod sa ikaupat nga silot, ang mga Ehiptohanon lang ang naapektohan; walay langaw didto sa Gosen."
+    },
+    {
+      "id": "ceb-5-10",
+      "diceNumber": 5,
+      "difficulty": "hard",
+      "question": "Kinsa ang mirebelde kang Moises uban kang Datan, Abiram, ug sa 250 ka lalaki?",
+      "acceptedAnswers": [
+        "Kore",
+        "Kora",
+        "Korah"
+      ],
+      "reference": "Leksiyon 27 · Numeros 16:1–17:13",
+      "hint": "Leksiyon 27 — Mirebelde Sila Kang Jehova",
+      "explanation": "Si Kore ug ang iyang kaubang 250 ka lalaki nasunog tungod sa kalayo nga gipadala ni Jehova."
+    },
+    {
+      "id": "ceb-5-11",
+      "diceNumber": 5,
+      "difficulty": "hard",
+      "question": "Pila ang edad ni Moises dihang namatay siya?",
+      "acceptedAnswers": [
+        "120",
+        "120 anyos",
+        "usa ka gatos ug baynte",
+        "sientos baynte"
+      ],
+      "reference": "Leksiyon 29 · Deuteronomio 34:1-12",
+      "hint": "Leksiyon 29 — Gipili ni Jehova si Josue",
+      "explanation": "Gipakita ni Jehova kang Moises ang Yutang Saad gikan sa Bukid sa Nebo, ug namatay siya sa edad nga 120."
+    },
+    {
+      "id": "ceb-5-12",
+      "diceNumber": 5,
+      "difficulty": "hard",
+      "question": "Kinsa ang babaye nga mipatay kang Sisera pinaagi sa ugsok sa tolda?",
+      "acceptedAnswers": [
+        "Jael",
+        "Hael"
+      ],
+      "reference": "Leksiyon 32 · Maghuhukom 4:1–5:31",
+      "hint": "Leksiyon 32 — Bag-ong Lider ug Duha ka Maisogong Babaye",
+      "explanation": "Mitago si Sisera sa tolda ni Jael, ug giugbok ni Jael sa iyang ulo ang ugsok sa tolda."
+    },
+    {
+      "id": "ceb-5-13",
+      "diceNumber": 5,
+      "difficulty": "hard",
+      "question": "Unsay ngalan sa anak ni Jonatan nga gipapuyo ni David sa iyang palasyo?",
+      "acceptedAnswers": [
+        "Mepiboset",
+        "Mefiboset",
+        "Mephibosheth"
+      ],
+      "reference": "Leksiyon 42 · 2 Samuel 9:1-13",
+      "hint": "Leksiyon 42 — Si Jonatan Maisogon ug Maunongon",
+      "explanation": "Wala gyod kalimti ni David ang iyang amigo nga si Jonatan, busa iyang giatiman ang anak niini nga si Mepiboset."
+    },
+    {
+      "id": "ceb-5-14",
+      "diceNumber": 5,
+      "difficulty": "hard",
+      "question": "Kinsa ang propeta nga gipaadto ni Jehova kang David aron badlongon siya sa iyang sala?",
+      "acceptedAnswers": [
+        "Natan",
+        "Nathan",
+        "propetang Natan"
+      ],
+      "reference": "Leksiyon 43 · 2 Samuel 11:1–12:14",
+      "hint": "Leksiyon 43 — Ang Sala ni Haring David",
+      "explanation": "Gisultihan ni Natan si David bahin sa dato nga mikuha sa karnero sa pobre, dayon miingon: ‘Ikaw tong tawhana!’"
+    },
+    {
+      "id": "ceb-5-15",
+      "diceNumber": 5,
+      "difficulty": "hard",
+      "question": "Asang lungsora gipaadto ni Jehova si Elias diin may biyuda nga mohatag niyag pagkaon panahon sa hulaw?",
+      "acceptedAnswers": [
+        "Zarepta",
+        "Sarepta",
+        "Zarephath"
+      ],
+      "reference": "Leksiyon 48 · 1 Hari 17:8-24",
+      "hint": "Leksiyon 48 — Anak sa Biyuda Nabuhi Pag-usab",
+      "explanation": "Wala mahurot ang harina ug lana sa biyuda sa Zarepta, ug gibanhaw pa gani ang iyang anak."
+    },
+    {
+      "id": "ceb-5-16",
+      "diceNumber": 5,
+      "difficulty": "hard",
+      "question": "Kinsa ang tag-iya sa ubasan nga gusto kaayong maangkon ni Haring Ahab?",
+      "acceptedAnswers": [
+        "Nabot",
+        "Naboth"
+      ],
+      "reference": "Leksiyon 49 · 1 Hari 21:1-29",
+      "hint": "Leksiyon 49 — Daotang Rayna Gisilotan",
+      "explanation": "Wala ibaligya ni Nabot ang ubasan kay supak kini sa Balaod ni Jehova, busa gipapatay siya ni Jezebel."
     },
     {
       "id": "ceb-6-01",
@@ -544,7 +1146,8 @@
         "Belteshazzar"
       ],
       "reference": "Leksiyon 59 · Daniel 1:1-21",
-      "explanation": "Gihatagan si Daniel ug Babilonyanhong ngalan nga Beltesazar."
+      "explanation": "Gihatagan si Daniel ug Babilonyanhong ngalan nga Beltesazar.",
+      "hint": "Leksiyon 59 — Upat ka Batan-on nga Mituman Kang Jehova"
     },
     {
       "id": "ceb-6-02",
@@ -559,7 +1162,8 @@
         "upat ka adlaw"
       ],
       "reference": "Leksiyon 86 · Juan 11:1-53",
-      "explanation": "Upat na ka adlaw nga nalubong si Lazaro sa pag-abot ni Jesus."
+      "explanation": "Upat na ka adlaw nga nalubong si Lazaro sa pag-abot ni Jesus.",
+      "hint": "Leksiyon 86 — Gibanhaw ni Jesus si Lazaro"
     },
     {
       "id": "ceb-6-03",
@@ -574,7 +1178,8 @@
         "tres mil"
       ],
       "reference": "Leksiyon 94 · Buhat 2:1-42",
-      "explanation": "Mga 3,000 ka tawo ang nagpabawtismo human sa wali ni Pedro."
+      "explanation": "Mga 3,000 ka tawo ang nagpabawtismo human sa wali ni Pedro.",
+      "hint": "Leksiyon 94 — Nadawat sa mga Tinun-an ang Balaang Espiritu"
     },
     {
       "id": "ceb-6-04",
@@ -587,7 +1192,8 @@
         "duha ka gatos ug kapitoan ug unom"
       ],
       "reference": "Leksiyon 101 · Buhat 27:1–28:31",
-      "explanation": "Naguba ang barko pero naluwas ang tanang 276 ka tawo."
+      "explanation": "Naguba ang barko pero naluwas ang tanang 276 ka tawo.",
+      "hint": "Leksiyon 101 — Gidala si Pablo sa Roma"
     },
     {
       "id": "ceb-6-05",
@@ -598,7 +1204,8 @@
         "Ananias"
       ],
       "reference": "Leksiyon 96 · Buhat 9:1-28",
-      "explanation": "Si Ananias ang giadto kang Saulo ug nakakita na pag-usab si Saulo."
+      "explanation": "Si Ananias ang giadto kang Saulo ug nakakita na pag-usab si Saulo.",
+      "hint": "Leksiyon 96 — Gipili ni Jesus si Saulo"
     },
     {
       "id": "ceb-6-06",
@@ -609,7 +1216,8 @@
         "Silas"
       ],
       "reference": "Leksiyon 99 · Buhat 16:16-34",
-      "explanation": "Si Pablo ug Silas gipriso sa Filipos ug nag-awit sila ug pagdayeg kang Jehova."
+      "explanation": "Si Pablo ug Silas gipriso sa Filipos ug nag-awit sila ug pagdayeg kang Jehova.",
+      "hint": "Leksiyon 99 — Guwardiya Nakakat-on sa Kamatuoran"
     },
     {
       "id": "ceb-6-07",
@@ -625,7 +1233,8 @@
         "rayna sa Seba"
       ],
       "reference": "Leksiyon 44 · 1 Hari 10:1-13",
-      "explanation": "Ang rayna sa Sheba miadto kang Solomon ug nakadayeg sa iyang kaalam."
+      "explanation": "Ang rayna sa Sheba miadto kang Solomon ug nakadayeg sa iyang kaalam.",
+      "hint": "Leksiyon 44 — Templo Para Kang Jehova"
     },
     {
       "id": "ceb-6-08",
@@ -636,7 +1245,118 @@
         "Dagon"
       ],
       "reference": "Leksiyon 38 · Maghuhukom 13:1–16:31",
-      "explanation": "Gipatumpag ni Samson ang templo sa diyos sa mga Filistehanon nga si Dagon."
+      "explanation": "Gipatumpag ni Samson ang templo sa diyos sa mga Filistehanon nga si Dagon.",
+      "hint": "Leksiyon 38 — Si Samson Gihimong Kusgan ni Jehova"
+    },
+    {
+      "id": "ceb-6-09",
+      "diceNumber": 6,
+      "difficulty": "hard",
+      "question": "Pila ka sundalong Asiryanhon ang gipatay sa anghel ni Jehova sa usa ka gabii?",
+      "acceptedAnswers": [
+        "185000",
+        "185,000",
+        "185 000",
+        "usa ka gatos ug kawaloan ug lima ka libo"
+      ],
+      "reference": "Leksiyon 55 · 2 Hari 19:1-37",
+      "hint": "Leksiyon 55 — Si Ezequias Gipanalipdan sa Anghel ni Jehova",
+      "explanation": "Gipanalipdan ni Jehova ang Jerusalem: sa usa ka gabii gipatay sa iyang anghel ang 185,000 ka sundalo ni Senakerib."
+    },
+    {
+      "id": "ceb-6-10",
+      "diceNumber": 6,
+      "difficulty": "hard",
+      "question": "Kinsa ang opisyal sa palasyo nga mitabang nga makuha si Jeremias gikan sa lapokon nga atabay?",
+      "acceptedAnswers": [
+        "Ebed-melek",
+        "Ebedmelek",
+        "Ebed melek",
+        "Ebed-melech"
+      ],
+      "reference": "Leksiyon 57 · Jeremias 38:1-13",
+      "hint": "Leksiyon 57 — Gisugo ni Jehova si Jeremias sa Pagsangyaw",
+      "explanation": "Gisultihan ni Ebed-melek ang hari nga mamatay si Jeremias sa atabay, ug gisugo siya sa hari nga kuhaon si Jeremias."
+    },
+    {
+      "id": "ceb-6-11",
+      "diceNumber": 6,
+      "difficulty": "hard",
+      "question": "Kinsa ang hari sa Babilonya nga nakakitag kamot nga nagsulat diha sa bungbong?",
+      "acceptedAnswers": [
+        "Belsazar",
+        "Belshazzar",
+        "Baltasar"
+      ],
+      "reference": "Leksiyon 63 · Daniel 5:1-30",
+      "hint": "Leksiyon 63 — Ang Gisulat Diha sa Bungbong",
+      "explanation": "Gipatin-aw ni Daniel kang Belsazar nga pildihon sa mga Medianhon ug Persianhon ang Babilonya."
+    },
+    {
+      "id": "ceb-6-12",
+      "diceNumber": 6,
+      "difficulty": "hard",
+      "question": "Sulod sa pila ka adlaw nahuman ang mga paril ug ganghaan sa Jerusalem sa panahon ni Nehemias?",
+      "acceptedAnswers": [
+        "52",
+        "52 ka adlaw",
+        "kalim-an ug duha",
+        "singkuwenta y dos"
+      ],
+      "reference": "Leksiyon 67 · Nehemias 6:1-19",
+      "hint": "Leksiyon 67 — Mga Paril sa Jerusalem",
+      "explanation": "Bisag gibugalbugalan sila sa mga kaaway, nahuman ang mga paril ug ganghaan sa 52 lang ka adlaw."
+    },
+    {
+      "id": "ceb-6-13",
+      "diceNumber": 6,
+      "difficulty": "hard",
+      "question": "Asang linawa gipaadto ni Jesus ang tawong natawong buta aron manghilam-os?",
+      "acceptedAnswers": [
+        "Siloam",
+        "Siloe",
+        "linaw sa Siloam"
+      ],
+      "reference": "Leksiyon 85 · Juan 9:1-41",
+      "hint": "Leksiyon 85 — Si Jesus Nang-ayo Panahon sa Igpapahulay",
+      "explanation": "Gipahiran ni Jesus ug lapok ang mata sa tawo, ug human siya manghilam-os sa linaw sa Siloam, nakakita na siya."
+    },
+    {
+      "id": "ceb-6-14",
+      "diceNumber": 6,
+      "difficulty": "hard",
+      "question": "Asang lungsora padulong ang duha ka tinun-an dihang midungan kanila si Jesus nga nabanhaw?",
+      "acceptedAnswers": [
+        "Emmaus",
+        "Emaus"
+      ],
+      "reference": "Leksiyon 91 · Lucas 23:50–24:43",
+      "hint": "Leksiyon 91 — Gibanhaw si Jesus",
+      "explanation": "Wala dayon mailhi sa duha ka tinun-an si Jesus; nailhan lang nila siya human niya ampoi ang tinapay didto sa Emmaus."
+    },
+    {
+      "id": "ceb-6-15",
+      "diceNumber": 6,
+      "difficulty": "hard",
+      "question": "Kinsa ang Pariseo nga mitambag sa Sanhedrin nga dili patyon ang mga apostoles?",
+      "acceptedAnswers": [
+        "Gamaliel"
+      ],
+      "reference": "Leksiyon 95 · Buhat 5:12-42",
+      "hint": "Leksiyon 95 — Walay Makapahunong Nila",
+      "explanation": "Miingon si Gamaliel nga basig gitabangan sa Diyos ang mga apostoles, busa wala sila patya."
+    },
+    {
+      "id": "ceb-6-16",
+      "diceNumber": 6,
+      "difficulty": "hard",
+      "question": "Asang islaha gipriso si apostol Juan dihang gipakitaan siya ni Jesus ug mga panan-awon?",
+      "acceptedAnswers": [
+        "Patmos"
+      ],
+      "reference": "Leksiyon 102 · Pinadayag 1:1-3",
+      "hint": "Leksiyon 102 — Mga Panan-awon ni Juan",
+      "explanation": "Didto sa isla sa Patmos, gipakitaan ni Jesus si Juan ug 16 ka panan-awon bahin sa umaabot."
     }
   ]
 }

@@ -1,0 +1,103 @@
+1|Gihimo sa Diyos ang Langit ug Yuta|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/1/gihimo-diyos-langit-yuta/
+2|Gihimo sa Diyos ang Unang Lalaki ug Babaye|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/1/gihimo-diyos-adan-eva/
+3|Si Adan ug Eva Wala Mosunod sa Diyos|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/2/adan-eva-wala-mosunod-diyos/
+4|Nasuko ug Nakapatay|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/2/nasuko-ug-nakapatay/
+5|Arka ni Noe|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/2/noe-ug-ang-arka/
+6|Walo ka Tawo Naluwas|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/2/pamilya-noe-naluwas/
+7|Torre sa Babel|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/3/torre-babel/
+8|Si Abraham ug Sara Misunod sa Diyos|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/3/abraham-ug-sara/
+9|May Anak na Sila!|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/3/isaac-ug-ismael/
+10|Hinumdomi ang Asawa ni Lot|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/3/hinumdomi-asawa-lot/
+11|Gisulayan ang Pagtuo|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/3/abraham-isaac-gisulayan-pagtuo/
+12|Si Jacob ang Nakadawat sa Panulondon|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/3/jacob-esau-panulondon/
+13|Maayo nag Relasyon si Jacob ug Esau|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/3/jacob-nakiglayog-esau-nag-uli/
+14|Sulugoon nga Matinumanon sa Diyos|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/4/jose/
+15|Wala Gyod Malimot si Jehova Kang Jose|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/4/paraon-damgo/
+16|Kinsa si Job?|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/4/job/
+17|Gipili ni Moises nga Simbahon si Jehova|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/4/moises/
+18|Tanom nga Nagkalayo|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/4/moises-ang-tanom-nagkalayo/
+19|Ang Unang Tulo ka Silot|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/4/ehipto-silot-1-2-3/
+20|Ang Sunod nga Unom ka Silot|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/4/ehipto-silot-4-9/
+21|Ang Ikanapulo nga Silot|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/4/10-silot-ehipto/
+22|Milagro Didto sa Pulang Dagat|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/4/natunga-ang-pulang-dagat/
+23|Ang Ilang Saad Kang Jehova|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/5/moises-bukid-sinai/
+24|Wala Sila Motuman sa Saad|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/5/moises-10-sugo-bulawang-baka/
+25|Tabernakulo Para sa Pagsimba|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/5/tabernakulo-moises/
+26|Dose ka Espiya|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/5/12-espiya-josue-caleb/
+27|Mirebelde Sila Kang Jehova|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/5/pagrebelde-kore-sungkod-aaron/
+28|Asno ni Balaam Misulti|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/5/asno-balaam-misulti/
+29|Gipili ni Jehova si Josue|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/6/josue-yutang-saad/
+30|Gitagoan ni Rahab ang mga Espiya|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/6/gitagoan-rahab-ang-mga-espiya/
+31|Si Josue ug ang mga Gabaonhon|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/6/josue-gabaon-adlaw-mihunong/
+32|Bag-ong Lider ug Duha ka Maisogong Babaye|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/6/barak-debora-jael/
+33|Si Ruth ug Noemi|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/6/ruth-noemi/
+34|Napildi ni Gideon ang mga Midianhon|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/6/gideon-midianhon/
+35|Si Ana Miampo nga Hatagan Siyag Anak|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/6/pag-ampo-ana/
+36|Saad ni Jepte|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/6/jepte-saad/
+37|Nakig-estorya si Jehova Kang Samuel|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/6/gitawag-diyos-samuel/
+38|Si Samson Gihimong Kusgan ni Jehova|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/6/samson-ug-delila/
+39|Ang Unang Hari sa Israel|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/7/saul-hari-israel/
+40|Si David ug Goliat|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/7/david-goliat/
+41|Si David ug Saul|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/7/haring-saul-david/
+42|Si Jonatan Maisogon ug Maunongon|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/7/jonatan-david/
+43|Ang Sala ni Haring David|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/7/david-ug-bat-seba/
+44|Templo Para Kang Jehova|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/8/templo-haring-solomon/
+45|Ang Gingharian Nabahin|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/8/gibahin-gingharian-sa-israel/
+46|Talagsaong Hitabo sa Bukid sa Carmelo|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/8/elias-ug-propeta-ni-baal/
+47|Gitabangan ni Jehova si Elias|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/8/propeta-elias-langob-bukid-horeb/
+48|Anak sa Biyuda Nabuhi Pag-usab|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/8/biyuda-zarepta-elias/
+49|Daotang Rayna Gisilotan|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/8/ahab-jezebel/
+50|Gitabangan ni Jehova si Jehosapat|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/8/haring-jehosapat/
+51|Ang Sundalo ug ang Batang Babaye|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/9/naaman-nga-sanlahon/
+52|Nagkalayong mga Sundalo ni Jehova|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/9/propetang-eliseo/
+53|Maisogon si Jehoiada|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/9/jehoiada-jehoas/
+54|Si Jehova Nagpailob Kang Jonas|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/9/jonas/
+55|Si Ezequias Gipanalipdan sa Anghel ni Jehova|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/9/ezequias/
+56|Gimahal ni Josias ang Balaod sa Diyos|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/9/maayo-hari-josias/
+57|Gisugo ni Jehova si Jeremias sa Pagsangyaw|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/10/propetang-jeremias/
+58|Jerusalem Gilaglag|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/10/jerusalem-gilaglag/
+59|Upat ka Batan-on nga Mituman Kang Jehova|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/10/haring-nabucodonosor-babilonya/
+60|Gingharian nga Walay Kataposan|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/10/nabucodonosor-nagdamgo-estatuwa/
+61|Wala Sila Moyukbo|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/10/sadrak-mesak-abednego/
+62|Gingharian nga Samag Dakong Kahoy|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/10/nabucodonosor-nagdamgo-kahoy/
+63|Ang Gisulat Diha sa Bungbong|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/10/gisulat-diha-sa-bungbong/
+64|Si Daniel Diha sa Langob sa mga Leyon|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/10/daniel-ug-mga-langob-leyon/
+65|Giluwas ni Ester ang Iyang Katawhan|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/10/giluwas-rayna-ester-iyang-katawhan/
+66|Si Esdras Nagtudlo sa Balaod sa Diyos|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/10/esdras-nagtudlo-balaod-diyos/
+67|Mga Paril sa Jerusalem|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/10/paril-sa-jerusalem-nehemias/
+68|Nanganak si Elisabet|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/11/zacarias-elisabet-juan/
+69|Gibisita ni Gabriel si Maria|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/11/gibisita-gabriel-maria/
+70|Gipahibalo sa mga Anghel nga Natawo si Jesus|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/11/gipahibalo-natawo-si-jesus/
+71|Gipanalipdan ni Jehova si Jesus|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/11/sa-unsang-paagi-gipanalipdan-jesus/
+72|Ang Bata nga si Jesus|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/11/bata-jesus-sa-templo/
+73|Giandam ni Juan ang Pag-abot ni Jesus|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/11/juan-tigbawtismo/
+74|Si Jesus Nahimong Mesiyas|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/12/jesus-nahimong-mesiyas/
+75|Si Jesus Gitental sa Yawa|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/12/jesus-gitental-yawa/
+76|Gihinloan ni Jesus ang Templo|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/12/gihinloan-jesus-templo/
+77|Ang Babaye sa Atabay|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/12/ang-babaye-sa-atabay/
+78|Gisangyaw ni Jesus ang Mensahe sa Gingharian|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/12/gisangyaw-jesus/
+79|Si Jesus Naghimog Daghang Milagro|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/12/jesus-naghimog-milagro/
+80|Si Jesus Mipilig Dose ka Apostoles|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/12/jesus-12-apostoles/
+81|Ang Wali sa Bukid|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/12/wali-sa-bukid/
+82|Gitudloan ni Jesus ang mga Tinun-an kon Unsaon Pag-ampo|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/12/jesus-nagtudlo-unsaon-pag-ampo/
+83|Libolibo ang Gipakaon ni Jesus|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/12/libolibo-gipakaon-jesus/
+84|Si Jesus Milakaw sa Dagat|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/12/jesus-milakaw-sa-dagat/
+85|Si Jesus Nang-ayo Panahon sa Igpapahulay|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/12/jesus-nang-ayo/
+86|Gibanhaw ni Jesus si Lazaro|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/12/gibanhaw-jesus-lazaro/
+87|Ang Kataposang Panihapon ni Jesus|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/13/kataposang-panihapon-jesus/
+88|Gidakop si Jesus|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/13/gidakop-jesus/
+89|Wala Ilha ni Pedro si Jesus|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/13/gilimod-pedro-jesus-3-higayon/
+90|Si Jesus Namatay sa Golgotha|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/13/jesus-namatay-golgotha/
+91|Gibanhaw si Jesus|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/13/gibanhaw-si-jesus/
+92|Nagpakita si Jesus sa mga Mangingisda|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/13/gidapit-jesus-ang-mga-mangingisda/
+93|Mibalik si Jesus sa Langit|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/13/misaka-jesus-sa-langit/
+94|Nadawat sa mga Tinun-an ang Balaang Espiritu|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/14/nadawat-tinun-an-balaang-espiritu-pentekostes/
+95|Walay Makapahunong Nila|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/14/walay-makapahunong-tinun-an-pagsangyaw/
+96|Gipili ni Jesus si Saulo|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/14/gipili-jesus-saulo/
+97|Nadawat ni Cornelio ang Balaang Espiritu|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/14/nadawat-cornelio-balaang-espiritu/
+98|Midaghan ang mga Kristohanon|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/14/midaghan-ang-mga-kristohanon/
+99|Guwardiya Nakakat-on sa Kamatuoran|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/14/guwardiya-nakakat-on-sa-kamatuoran/
+100|Si Pablo ug Timoteo|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/14/pablo-ug-timoteo/
+101|Gidala si Pablo sa Roma|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/14/gidala-apostol-pablo-nalunod-roma/
+102|Mga Panan-awon ni Juan|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/14/basahon-sa-pinadayag-juan/
+103|“Paanhia ang Imong Gingharian”|https://www.jw.org/ceb/librarya/libro/mga-estorya-bibliya-leksiyon/14/paanhia-gingharian-paraiso/

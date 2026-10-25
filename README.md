@@ -2,7 +2,7 @@
 
 A classic snakes-and-ladders board game for the browser where every roll has to be earned: when the die lands, the player answers a Bible question tied to that number. A correct answer moves the token; a wrong one keeps it in place.
 
-The seed questions are written in Cebuano and taken from the book *Mga Leksiyon nga Imong Makat-onan Gikan sa Bibliya* (jw.org). There are 48 of them, 8 per dice number, easier on 1 and harder on 6. Every question lists its lesson number and Bible reference, and `research/questions-ceb-sources.md` quotes the lesson sentence that proves each answer.
+The seed questions are written in Cebuano and taken from the book *Mga Leksiyon nga Imong Makat-onan Gikan sa Bibliya* (jw.org). There are 96 of them, 16 per dice number, easier on 1 and harder on 6, from 90 of the book's 103 lessons. Every question lists its lesson number and Bible reference, has a **Hint** button that names the lesson it comes from, and `research/questions-ceb-sources.md` quotes the lesson sentence that proves each answer.
 
 **Play it:** https://edgarpateno.github.io/bible-snakes-ladders/
 
@@ -24,7 +24,7 @@ Node 18 or newer.
 1. **New Game** on the start screen. Players, board and rules come from **Settings**.
 2. The highlighted player clicks **Roll Dice** (or presses **R**).
 3. A question for the rolled number appears. Type the answer and press **Enter** or **Submit**.
-4. Correct: the token walks forward, climbs ladders and slides down snakes. Wrong: the token stays, and the correct answer is shown if that rule is on.
+4. Correct: the token walks forward, climbs ladders and slides down snakes. Wrong: the token stays, the correct answer is shown if that rule is on, and after a short pause the next player rolls. **Move now** / **Next player** skip the pause.
 5. The first player to reach the last square wins.
 
 A host can judge spoken answers with **Mark correct / Mark wrong**, or **Accept anyway** after a typo. A game in progress survives a page refresh; **Continue Game** picks it up.

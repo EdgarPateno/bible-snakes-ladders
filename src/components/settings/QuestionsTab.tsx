@@ -26,7 +26,7 @@ function fold(s: string): string {
 }
 
 function haystack(q: Question): string {
-  return fold([q.question, q.acceptedAnswers.join(' '), q.reference ?? '', q.explanation ?? ''].join('\n'));
+  return fold([q.question, q.acceptedAnswers.join(' '), q.reference ?? '', q.explanation ?? '', q.hint ?? ''].join('\n'));
 }
 
 const DIFFICULTY_LABEL: Record<Difficulty, string> = { easy: 'Easy', medium: 'Medium', hard: 'Hard' };

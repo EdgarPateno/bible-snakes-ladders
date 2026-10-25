@@ -15,7 +15,7 @@ interface QuestionModalProps {
   rules: Rules;
 }
 
-const AUTO_MOVE_MS = 2500;
+const AUTO_CONTINUE_MS = 2500;
 const DIFFICULTY_LABEL = { easy: 'Easy', medium: 'Medium', hard: 'Hard' } as const;
 
 /** Mount with key={turn + question id} so every question starts with an empty answer and a full timer. */
@@ -23,6 +23,7 @@ export function QuestionModal({ game, question, rules }: QuestionModalProps) {
   const answer = useGame((s) => s.answer);
   const continueAfterFeedback = useGame((s) => s.continueAfterFeedback);
   const [given, setGiven] = useState('');
+  const [hintOpen, setHintOpen] = useState(false);
   const secondsLeft = () =>
     Math.max(0, rules.answerTimerSeconds - Math.floor((Date.now() - (game.askedAt ?? Date.now())) / 1000));
   // Re-render once a second while the timer runs; the time left is always computed from askedAt.
@@ -59,14 +60,14 @@ export function QuestionModal({ game, question, rules }: QuestionModalProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [asking, tick, rules.answerTimerSeconds]);
 
-  // A correct answer moves the token on its own after a short pause; "Move now" skips the wait.
-  // A wrong answer waits for "Next player" so the room can read the right answer.
-  const movesNext = !asking && (feedback?.outcome === 'correct' || feedback?.outcome === 'skipped');
+  // After a short pause the game goes on by itself: a correct answer moves the token, a wrong one passes
+  // the turn. "Move now" / "Next player" skip the wait; a host "Accept anyway" restarts it.
+  const outcome = asking ? undefined : feedback?.outcome;
   useEffect(() => {
-    if (!movesNext) return;
-    const t = setTimeout(() => continueAfterFeedback(rules.extraTurnOnSix), AUTO_MOVE_MS);
+    if (!outcome) return;
+    const t = setTimeout(() => continueAfterFeedback(rules.extraTurnOnSix), AUTO_CONTINUE_MS);
     return () => clearTimeout(t);
-  }, [movesNext, continueAfterFeedback, rules.extraTurnOnSix]);
+  }, [outcome, continueAfterFeedback, rules.extraTurnOnSix]);
 
   if (!player) return null;
   const correct = feedback?.outcome === 'correct';
@@ -117,6 +118,20 @@ export function QuestionModal({ game, question, rules }: QuestionModalProps) {
                 )}
               </div>
               <h2 className="mt-2 text-[clamp(1.6rem,3.2vw,2.6rem)] font-semibold leading-snug">{question.question}</h2>
+              {asking && question.hint && (
+                <div className="mt-3 flex flex-wrap items-center gap-3">
+                  <Button size="sm" aria-expanded={hintOpen} aria-controls="question-hint" onClick={() => setHintOpen((v) => !v)}>
+                    <span aria-hidden="true">💡</span> {hintOpen ? 'Hide hint' : 'Hint'}
+                  </Button>
+                  <p id="question-hint" aria-live="polite" className="text-lg text-ink-soft">
+                    {hintOpen && (
+                      <>
+                        From <strong className="text-ink">{question.hint}</strong>
+                      </>
+                    )}
+                  </p>
+                </div>
+              )}
             </>
           ) : (
             <h2 className="text-2xl font-semibold">There are no questions set up yet, so this roll counts automatically.</h2>

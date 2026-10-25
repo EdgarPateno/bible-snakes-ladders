@@ -17,7 +17,7 @@ export interface QuestionsImport {
 }
 
 const DIFFICULTIES: Difficulty[] = ['easy', 'medium', 'hard'];
-const CSV_COLUMNS = ['id', 'diceNumber', 'question', 'acceptedAnswers', 'reference', 'difficulty', 'explanation'] as const;
+const CSV_COLUMNS = ['id', 'diceNumber', 'question', 'acceptedAnswers', 'reference', 'difficulty', 'explanation', 'hint'] as const;
 
 // ---------- CSV primitives ----------
 
@@ -104,9 +104,11 @@ export function normalizeQuestion(raw: unknown): { question?: Question; error?: 
   };
   const reference = cleanString(r.reference);
   const explanation = cleanString(r.explanation);
+  const hint = cleanString(r.hint)?.slice(0, 200);
   if (reference) q.reference = reference;
   if (difficultyRaw) q.difficulty = difficultyRaw as Difficulty;
   if (explanation) q.explanation = explanation;
+  if (hint) q.hint = hint;
   return { question: q };
 }
 
@@ -137,6 +139,7 @@ export function questionsToCsv(questions: Question[]): string {
       q.reference ?? '',
       q.difficulty ?? '',
       q.explanation ?? '',
+      q.hint ?? '',
     ];
     lines.push(values.map(csvCell).join(','));
   }
