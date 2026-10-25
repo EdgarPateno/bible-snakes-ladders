@@ -38,7 +38,7 @@ export function upgradeQuestions(questions: Question[]): Question[] {
 }
 
 /** Built-in questions added on 2026-10-25 (ceb-1-09 … ceb-6-16), together with a lesson hint on every built-in question. */
-const ADDED_2026_10_25 = new Set(DEFAULT_QUESTIONS.filter((q) => Number(q.id.split('-')[2]) > 8).map((q) => q.id));
+const ADDED_2026_10_25 = new Set([1, 2, 3, 4, 5, 6].flatMap((dice) => [9, 10, 11, 12, 13, 14, 15, 16].map((n) => `ceb-${dice}-${n.toString().padStart(2, '0')}`)));
 
 /**
  * One-time upgrade of settings saved before 2026-10-25. Only for a list that still holds built-in questions:

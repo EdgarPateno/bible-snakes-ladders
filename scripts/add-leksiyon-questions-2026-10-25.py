@@ -2,7 +2,7 @@
 # and gives every built-in question a `hint` naming its lesson. Proof quotes are checked against the lesson
 # text saved in research/leksiyon-2026-10-25/ (read with the gstack /browse headed browser).
 # Run from the repo root: python3 -I scripts/add-leksiyon-questions-2026-10-25.py
-import json, re, sys
+import json, re, sys, unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -26,7 +26,7 @@ NEW = [
     ('ceb-1-11', 39, 'easy', 'Kinsa ang unang hari sa Israel?', ['Saul', 'Haring Saul'],
      'Giingnan ni Jehova si Samuel nga si Saul ang mahimong unang hari sa Israel.', '1 Samuel 9:15-17; 10:20-24',
      'Giingnan ni Jehova si Samuel nga si Saul ang mahimong unang hari.'),
-    ('ceb-1-12', 84, 'easy', 'Kinsa ang apostoles nga mikanaog sa sakayan ug milakaw ibabaw sa tubig paingon kang Jesus?', ['Pedro', 'Simon Pedro', 'Peter'],
+    ('ceb-1-12', 84, 'easy', 'Kinsa ang apostoles nga mikanaog sa sakayan ug milakaw ibabaw sa tubig paingon kang Jesus?', ['Pedro', 'Simon Pedro', 'Apostol Pedro', 'Peter'],
      'Milakaw si Pedro ibabaw sa tubig, pero dihang mitan-aw siya sa bagyo nahadlok siya ug nag-anam siyag kaunlod.', 'Mateo 14:23-34',
      'Bisag kusog ang bagyo, mikanaog si Pedro gikan sa sakayan ug milakaw ibabaw sa tubig paingon kang Jesus.'),
     ('ceb-1-13', 90, 'easy', 'Kinsa ang gobernador nga misugot nga patyon si Jesus?', ['Pilato', 'Poncio Pilato', 'Pilate', 'Pontius Pilate'],
@@ -54,7 +54,7 @@ NEW = [
     ('ceb-2-12', 11, 'easy', 'Unsang hayopa ang gihalad ni Abraham puli kang Isaac?', ['karnero', 'laking karnero', 'ram', 'sheep'],
      'Nakakita si Abraham ug karnero nga nasangit ang sungay sa kahoykahoy, ug kini ang iyang gihalad puli kang Isaac.', 'Genesis 22:1-18',
      'Dayon nakakita si Abraham ug karnero nga ang sungay nasangit sa mga kahoykahoy. … Iya dayong gitangtang ang hikot ni Isaac ug ang karnero maoy iyang gihalad.'),
-    ('ceb-2-13', 31, 'easy', 'Unsay gihangyo ni Josue kang Jehova nga pahunongon aron mapildi nila ang mga Canaanhon?', ['adlaw', 'ang adlaw', 'sun'],
+    ('ceb-2-13', 31, 'easy', 'Unsay gihangyo ni Josue kang Jehova nga pahunongon aron mapildi nila ang mga Canaanhon?', ['adlaw', 'ang adlaw', 'adlaw ug bulan', 'sun'],
      'May pagsalig si Josue kang Jehova, ug wala mosalop ang adlaw hangtod napildi ang mga Canaanhon.', 'Josue 10:1-15',
      'Dayon gihangyo ni Josue si Jehova nga pahunongon ang adlaw.'),
     ('ceb-2-14', 78, 'easy', 'Unsay trabaho ni Pedro, Andres, Santiago, ug Juan dihang gidapit sila ni Jesus?', ['mangingisda', 'mananagat', 'nangisda', 'fisherman', 'fishermen'],
@@ -73,7 +73,7 @@ NEW = [
     ('ceb-3-10', 21, 'medium', 'Unsay tawag sa espesyal nga panihapon nga himoon sa mga Israelinhon kada tuig aron mahinumdoman ang ilang pagkaluwas sa Ehipto?', ['Paskuwa', 'Paskwa', 'Passover'],
      'Kada tuig himoon sa mga Israelinhon ang Paskuwa aron mahinumdoman kon giunsa sila pagluwas ni Jehova.', 'Exodo 11:1–12:42',
      'Para mahinumdoman nila kon giunsa sila pagluwas ni Jehova, kinahanglang himoon nila ang maong espesyal nga panihapon kada tuig. Gitawag kanag Paskuwa.'),
-    ('ceb-3-11', 23, 'medium', 'Asang bukid nagkampo ang mga Israelinhon mga duha ka bulan human sila mobiya sa Ehipto?', ['Sinai', 'Bukid sa Sinai', 'Mount Sinai'],
+    ('ceb-3-11', 23, 'medium', 'Asang bukid nagkampo ang mga Israelinhon mga duha ka bulan human sila mobiya sa Ehipto?', ['Sinai', 'Bukid sa Sinai', 'Mount Sinai', 'Horeb', 'Bukid sa Horeb'],
      'Didto sa Bukid sa Sinai, misaad ang mga Israelinhon nga buhaton nila ang tanan nga isulti ni Jehova.', 'Exodo 19:1–20:21',
      'Mga duha ka bulan human makabiya sa Ehipto ang mga Israelinhon, miabot sila sa Bukid sa Sinai ug nagkampo didto.'),
     ('ceb-3-12', 25, 'medium', 'Kinsa ang hataas nga saserdote nga mao lang ang puwedeng mosulod sa Labing Balaan sa tabernakulo?', ['Aaron', 'Aron'],
@@ -88,7 +88,7 @@ NEW = [
     ('ceb-3-15', 41, 'medium', 'Unsang instrumento ang maayo kaayong tugtogon ni David?', ['alpa', 'arpa', 'harp'],
      'Maayo kaayong motugtog ug alpa si David, pero gilabay siyag bangkaw ni Saul samtang nagtugtog siya.', '1 Samuel 16:14-23; 18:5-16',
      'Maayo kaayong motugtog ug alpa si David.'),
-    ('ceb-3-16', 47, 'medium', 'Kinsa ang gisugo ni Jehova nga mopuli kang Elias ingong propeta?', ['Eliseo', 'Elisha'],
+    ('ceb-3-16', 47, 'medium', 'Kinsa ang gisugo ni Jehova nga mopuli kang Elias ingong propeta?', ['Eliseo', 'Elisha', 'propetang Eliseo'],
      'Giingnan ni Jehova si Elias nga pahibaloon si Eliseo nga siya ang mopuli niya nga propeta.', '1 Hari 19:1-18',
      'Lakaw ug pahibaloa si Eliseo nga siya ang mopuli nimo nga propeta.'),
 
@@ -117,7 +117,7 @@ NEW = [
      'Didto sa Bukid sa mga Olibo, misaka si Jesus sa langit ug natabonan siya sa panganod.', 'Buhat 1:2-14',
      'Dayon nakigkita si Jesus sa iyang mga apostoles sa kataposang higayon didto sa Bukid sa mga Olibo.'),
 
-    ('ceb-5-09', 20, 'hard', 'Unsay ngalan sa lugar sa Ehipto nga gipuy-an sa mga Israelinhon diin walay langaw?', ['Gosen', 'Goshen'],
+    ('ceb-5-09', 20, 'hard', 'Unsay ngalan sa lugar sa Ehipto nga gipuy-an sa mga Israelinhon diin walay langaw?', ['Gosen', 'Goshen', 'yuta sa Gosen'],
      'Sugod sa ikaupat nga silot, ang mga Ehiptohanon lang ang naapektohan; walay langaw didto sa Gosen.', 'Exodo 8:20–10:29',
      'Pero walay langaw didto sa Gosen nga maoy gipuy-an sa mga Israelinhon.'),
     ('ceb-5-10', 27, 'hard', 'Kinsa ang mirebelde kang Moises uban kang Datan, Abiram, ug sa 250 ka lalaki?', ['Kore', 'Kora', 'Korah'],
@@ -135,7 +135,7 @@ NEW = [
     ('ceb-5-14', 43, 'hard', 'Kinsa ang propeta nga gipaadto ni Jehova kang David aron badlongon siya sa iyang sala?', ['Natan', 'Nathan', 'propetang Natan'],
      'Gisultihan ni Natan si David bahin sa dato nga mikuha sa karnero sa pobre, dayon miingon: ‘Ikaw tong tawhana!’', '2 Samuel 11:1–12:14',
      'Gipaadto ni Jehova ang propetang si Natan kang David.'),
-    ('ceb-5-15', 48, 'hard', 'Asang lungsora gipaadto ni Jehova si Elias diin may biyuda nga mohatag niyag pagkaon panahon sa hulaw?', ['Zarepta', 'Sarepta', 'Zarephath'],
+    ('ceb-5-15', 48, 'hard', 'Asang lungsora gipaadto ni Jehova si Elias diin may biyuda nga mohatag niyag pagkaon panahon sa hulaw?', ['Zarepta', 'Sarepta', 'Zarephath', 'lungsod sa Zarepta'],
      'Wala mahurot ang harina ug lana sa biyuda sa Zarepta, ug gibanhaw pa gani ang iyang anak.', '1 Hari 17:8-24',
      'Dihang naghulaw, miingon si Jehova kang Elias: ‘Adto sa Zarepta. May biyuda nga mohatag nimog pagkaon didto.’'),
     ('ceb-5-16', 49, 'hard', 'Kinsa ang tag-iya sa ubasan nga gusto kaayong maangkon ni Haring Ahab?', ['Nabot', 'Naboth'],
@@ -148,22 +148,22 @@ NEW = [
     ('ceb-6-10', 57, 'hard', 'Kinsa ang opisyal sa palasyo nga mitabang nga makuha si Jeremias gikan sa lapokon nga atabay?', ['Ebed-melek', 'Ebedmelek', 'Ebed melek', 'Ebed-melech'],
      'Gisultihan ni Ebed-melek ang hari nga mamatay si Jeremias sa atabay, ug gisugo siya sa hari nga kuhaon si Jeremias.', 'Jeremias 38:1-13',
      'Dayon ang opisyal sa palasyo nga si Ebed-melek miingon sa hari: ‘Gihulog sa mga pangulo si Jeremias sa atabay! … Giingnan sa hari si Ebed-melek nga magdalag 30 ka tawo aron kuhaon si Jeremias gikan sa atabay.'),
-    ('ceb-6-11', 63, 'hard', 'Kinsa ang hari sa Babilonya nga nakakitag kamot nga nagsulat diha sa bungbong?', ['Belsazar', 'Belshazzar', 'Baltasar'],
+    ('ceb-6-11', 63, 'hard', 'Kinsa ang hari sa Babilonya nga nakakitag kamot nga nagsulat diha sa bungbong?', ['Belsazar', 'Belshazzar', 'Baltasar', 'Haring Belsazar'],
      'Gipatin-aw ni Daniel kang Belsazar nga pildihon sa mga Medianhon ug Persianhon ang Babilonya.', 'Daniel 5:1-30',
      'Si Belsazar ang sunod nga naghari sa Babilonya. … Dayon kalit silang nakakitag kamot diha sa bungbong, ug may gisulat kini nga dili masabtan.'),
     ('ceb-6-12', 67, 'hard', 'Sulod sa pila ka adlaw nahuman ang mga paril ug ganghaan sa Jerusalem sa panahon ni Nehemias?', ['52', '52 ka adlaw', 'kalim-an ug duha', 'singkuwenta y dos'],
      'Bisag gibugalbugalan sila sa mga kaaway, nahuman ang mga paril ug ganghaan sa 52 lang ka adlaw.', 'Nehemias 6:1-19',
      'Nahuman ang mga paril ug ganghaan sa 52 lang ka adlaw.'),
-    ('ceb-6-13', 85, 'hard', 'Asang linawa gipaadto ni Jesus ang tawong natawong buta aron manghilam-os?', ['Siloam', 'Siloe', 'linaw sa Siloam'],
+    ('ceb-6-13', 85, 'hard', 'Asang linawa gipaadto ni Jesus ang tawong natawong buta aron manghilam-os?', ['Siloam', 'Siloe', 'linaw sa Siloam', 'linaw sa Siloe'],
      'Gipahiran ni Jesus ug lapok ang mata sa tawo, ug human siya manghilam-os sa linaw sa Siloam, nakakita na siya.', 'Juan 9:1-41',
      'Si Jesus miingon kaniya: ‘Lakaw, panghilam-os sa linaw sa Siloam.’'),
-    ('ceb-6-14', 91, 'hard', 'Asang lungsora padulong ang duha ka tinun-an dihang midungan kanila si Jesus nga nabanhaw?', ['Emmaus', 'Emaus'],
+    ('ceb-6-14', 91, 'hard', 'Asang lungsora padulong ang duha ka tinun-an dihang midungan kanila si Jesus nga nabanhaw?', ['Emmaus', 'Emaus', 'lungsod sa Emmaus'],
      'Wala dayon mailhi sa duha ka tinun-an si Jesus; nailhan lang nila siya human niya ampoi ang tinapay didto sa Emmaus.', 'Lucas 23:50–24:43',
      'Niana pong adlawa, dihay duha ka tinun-an nga naglakaw padulong sa Emmaus gikan sa Jerusalem.'),
     ('ceb-6-15', 95, 'hard', 'Kinsa ang Pariseo nga mitambag sa Sanhedrin nga dili patyon ang mga apostoles?', ['Gamaliel'],
      'Miingon si Gamaliel nga basig gitabangan sa Diyos ang mga apostoles, busa wala sila patya.', 'Buhat 5:12-42',
      'Pero ang Pariseo nga si Gamaliel mibarog ug miingon: ‘Pagbantay mo! Basig gitabangan tuod sila sa Diyos.'),
-    ('ceb-6-16', 102, 'hard', 'Asang islaha gipriso si apostol Juan dihang gipakitaan siya ni Jesus ug mga panan-awon?', ['Patmos'],
+    ('ceb-6-16', 102, 'hard', 'Asang islaha gipriso si apostol Juan dihang gipakitaan siya ni Jesus ug mga panan-awon?', ['Patmos', 'isla sa Patmos'],
      'Didto sa isla sa Patmos, gipakitaan ni Jesus si Juan ug 16 ka panan-awon bahin sa umaabot.', 'Pinadayag 1:1-3',
      'Samtang gipriso si apostol Juan didto sa isla sa Patmos, gipakitaan siya ni Jesus ug 16 ka panan-awon'),
 ]
@@ -173,8 +173,15 @@ def body(n):
     return re.sub(r'\s+', ' ', (RAW / f'B{n}.txt').read_text())
 
 
-def hint(n):
-    return f'Leksiyon {n} — {toc[n][0]}'
+def fold(text):
+    return ' ' + ' '.join(re.sub(r'[^a-z0-9]+', ' ', unicodedata.normalize('NFD', text.lower()).encode('ascii', 'ignore').decode()).split()) + ' '
+
+
+def hint(n, answers):
+    # The lesson title alone when it does not give the answer away; otherwise just the lesson number.
+    title = toc[n][0]
+    gives_away = any(len(fold(a).strip()) > 2 and fold(a) in fold(title) for a in answers)
+    return f'Leksiyon {n}' if gives_away else f'Leksiyon {n} — {title}'
 
 
 data = json.loads(DATA.read_text())
@@ -184,7 +191,7 @@ used = set()
 for q in old:
     n = int(re.match(r'Leksiyon (\d+)', q['reference']).group(1))
     used.add(n)
-    q['hint'] = hint(n)
+    q['hint'] = hint(n, q['acceptedAnswers'])
 
 problems = []
 rows = []
@@ -200,7 +207,7 @@ for qid, n, diff, text, answers, expl, ref, proof in NEW:
     dice = int(qid.split('-')[1])
     assert diff == ('easy' if dice <= 2 else 'medium' if dice <= 4 else 'hard'), qid
     fresh.append({'id': qid, 'diceNumber': dice, 'difficulty': diff, 'question': text, 'acceptedAnswers': answers,
-                  'reference': f'Leksiyon {n} · {ref}', 'hint': hint(n), 'explanation': expl})
+                  'reference': f'Leksiyon {n} · {ref}', 'hint': hint(n, answers), 'explanation': expl})
     title, url = toc[n]
     rows.append(f'| {qid} | Leksiyon {n} — {title} | {url} | {proof} |')
 

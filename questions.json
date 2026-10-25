@@ -12,7 +12,7 @@
       ],
       "reference": "Leksiyon 5 · Genesis 6:1-22",
       "explanation": "Gisugo ni Jehova si Noe nga maghimo ug arka aron maluwas siya ug ang iyang pamilya sa Lunop.",
-      "hint": "Leksiyon 5 — Arka ni Noe"
+      "hint": "Leksiyon 5"
     },
     {
       "id": "ceb-1-02",
@@ -38,7 +38,7 @@
       ],
       "reference": "Leksiyon 40 · 1 Samuel 17:1-54",
       "explanation": "Si Goliat ang higante nga naigo sa bato ni David ug namatay.",
-      "hint": "Leksiyon 40 — Si David ug Goliat"
+      "hint": "Leksiyon 40"
     },
     {
       "id": "ceb-1-04",
@@ -86,7 +86,7 @@
       ],
       "reference": "Leksiyon 64 · Daniel 6:1-28",
       "explanation": "Gihulog si Daniel sa langob sa mga leyon, pero gipanalipdan siya sa anghel ni Jehova.",
-      "hint": "Leksiyon 64 — Si Daniel Diha sa Langob sa mga Leyon"
+      "hint": "Leksiyon 64"
     },
     {
       "id": "ceb-1-07",
@@ -113,7 +113,7 @@
       ],
       "reference": "Leksiyon 69 · Lucas 1:26-56",
       "explanation": "Gibisita ni Gabriel si Maria ug giingnan nga siya ang mahimong inahan ni Jesus.",
-      "hint": "Leksiyon 69 — Gibisita ni Gabriel si Maria"
+      "hint": "Leksiyon 69"
     },
     {
       "id": "ceb-1-09",
@@ -163,6 +163,7 @@
       "acceptedAnswers": [
         "Pedro",
         "Simon Pedro",
+        "Apostol Pedro",
         "Peter"
       ],
       "reference": "Leksiyon 84 · Mateo 14:23-34",
@@ -291,7 +292,7 @@
       ],
       "reference": "Leksiyon 18 · Exodo 3:1–4:20",
       "explanation": "Nakita ni Moises ang tanom nga nagkalayo pero wala masunog, ug didto siya gisultihan ni Jehova.",
-      "hint": "Leksiyon 18 — Tanom nga Nagkalayo"
+      "hint": "Leksiyon 18"
     },
     {
       "id": "ceb-2-05",
@@ -306,7 +307,7 @@
       ],
       "reference": "Leksiyon 22 · Exodo 13:21–15:21",
       "explanation": "Gitunga ni Jehova ang Pulang Dagat ug mitabok ang mga Israelinhon sa uga nga dalan.",
-      "hint": "Leksiyon 22 — Milagro Didto sa Pulang Dagat"
+      "hint": "Leksiyon 22"
     },
     {
       "id": "ceb-2-06",
@@ -319,7 +320,7 @@
       ],
       "reference": "Leksiyon 38 · Maghuhukom 13:1–16:31",
       "explanation": "Si Samson nawad-an ug kusog dihang gipaputlan ni Delila ang iyang buhok.",
-      "hint": "Leksiyon 38 — Si Samson Gihimong Kusgan ni Jehova"
+      "hint": "Leksiyon 38"
     },
     {
       "id": "ceb-2-07",
@@ -349,7 +350,7 @@
       ],
       "reference": "Leksiyon 86 · Juan 11:1-53",
       "explanation": "Gibanhaw ni Jesus si Lazaro ug migawas siya sa lubnganan.",
-      "hint": "Leksiyon 86 — Gibanhaw ni Jesus si Lazaro"
+      "hint": "Leksiyon 86"
     },
     {
       "id": "ceb-2-09",
@@ -416,6 +417,7 @@
       "acceptedAnswers": [
         "adlaw",
         "ang adlaw",
+        "adlaw ug bulan",
         "sun"
       ],
       "reference": "Leksiyon 31 · Josue 10:1-15",
@@ -476,7 +478,7 @@
       ],
       "reference": "Leksiyon 7 · Genesis 11:1-9",
       "explanation": "Ang siyudad gitawag ug Babel, nga nagkahulogan ug \"Kalibog.\"",
-      "hint": "Leksiyon 7 — Torre sa Babel"
+      "hint": "Leksiyon 7"
     },
     {
       "id": "ceb-3-02",
@@ -609,7 +611,9 @@
       "acceptedAnswers": [
         "Sinai",
         "Bukid sa Sinai",
-        "Mount Sinai"
+        "Mount Sinai",
+        "Horeb",
+        "Bukid sa Horeb"
       ],
       "reference": "Leksiyon 23 · Exodo 19:1–20:21",
       "hint": "Leksiyon 23 — Ang Ilang Saad Kang Jehova",
@@ -678,7 +682,8 @@
       "question": "Kinsa ang gisugo ni Jehova nga mopuli kang Elias ingong propeta?",
       "acceptedAnswers": [
         "Eliseo",
-        "Elisha"
+        "Elisha",
+        "propetang Eliseo"
       ],
       "reference": "Leksiyon 47 · 1 Hari 19:1-18",
       "hint": "Leksiyon 47 — Gitabangan ni Jehova si Elias",
@@ -695,7 +700,7 @@
       ],
       "reference": "Leksiyon 33 · Ruth 1:1–4:22",
       "explanation": "Giminyoan ni Boaz si Ruth, ug ang ilang anak nga si Obed nahimong lolo ni Haring David.",
-      "hint": "Leksiyon 33 — Si Ruth ug Noemi"
+      "hint": "Leksiyon 33"
     },
     {
       "id": "ceb-4-02",
@@ -1033,7 +1038,8 @@
       "question": "Unsay ngalan sa lugar sa Ehipto nga gipuy-an sa mga Israelinhon diin walay langaw?",
       "acceptedAnswers": [
         "Gosen",
-        "Goshen"
+        "Goshen",
+        "yuta sa Gosen"
       ],
       "reference": "Leksiyon 20 · Exodo 8:20–10:29",
       "hint": "Leksiyon 20 — Ang Sunod nga Unom ka Silot",
@@ -1117,7 +1123,8 @@
       "acceptedAnswers": [
         "Zarepta",
         "Sarepta",
-        "Zarephath"
+        "Zarephath",
+        "lungsod sa Zarepta"
       ],
       "reference": "Leksiyon 48 · 1 Hari 17:8-24",
       "hint": "Leksiyon 48 — Anak sa Biyuda Nabuhi Pag-usab",
@@ -1286,7 +1293,8 @@
       "acceptedAnswers": [
         "Belsazar",
         "Belshazzar",
-        "Baltasar"
+        "Baltasar",
+        "Haring Belsazar"
       ],
       "reference": "Leksiyon 63 · Daniel 5:1-30",
       "hint": "Leksiyon 63 — Ang Gisulat Diha sa Bungbong",
@@ -1315,7 +1323,8 @@
       "acceptedAnswers": [
         "Siloam",
         "Siloe",
-        "linaw sa Siloam"
+        "linaw sa Siloam",
+        "linaw sa Siloe"
       ],
       "reference": "Leksiyon 85 · Juan 9:1-41",
       "hint": "Leksiyon 85 — Si Jesus Nang-ayo Panahon sa Igpapahulay",
@@ -1328,7 +1337,8 @@
       "question": "Asang lungsora padulong ang duha ka tinun-an dihang midungan kanila si Jesus nga nabanhaw?",
       "acceptedAnswers": [
         "Emmaus",
-        "Emaus"
+        "Emaus",
+        "lungsod sa Emmaus"
       ],
       "reference": "Leksiyon 91 · Lucas 23:50–24:43",
       "hint": "Leksiyon 91 — Gibanhaw si Jesus",
@@ -1352,7 +1362,8 @@
       "difficulty": "hard",
       "question": "Asang islaha gipriso si apostol Juan dihang gipakitaan siya ni Jesus ug mga panan-awon?",
       "acceptedAnswers": [
-        "Patmos"
+        "Patmos",
+        "isla sa Patmos"
       ],
       "reference": "Leksiyon 102 · Pinadayag 1:1-3",
       "hint": "Leksiyon 102 — Mga Panan-awon ni Juan",

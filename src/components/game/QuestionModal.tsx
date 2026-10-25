@@ -15,7 +15,8 @@ interface QuestionModalProps {
   rules: Rules;
 }
 
-const AUTO_CONTINUE_MS = 2500;
+/** Pause before the game goes on by itself; a wrong answer waits longer so the room can read the right one. */
+const AUTO_CONTINUE_MS = { correct: 2500, skipped: 2500, wrong: 5000, timeout: 5000 } as const;
 const DIFFICULTY_LABEL = { easy: 'Easy', medium: 'Medium', hard: 'Hard' } as const;
 
 /** Mount with key={turn + question id} so every question starts with an empty answer and a full timer. */
@@ -65,7 +66,7 @@ export function QuestionModal({ game, question, rules }: QuestionModalProps) {
   const outcome = asking ? undefined : feedback?.outcome;
   useEffect(() => {
     if (!outcome) return;
-    const t = setTimeout(() => continueAfterFeedback(rules.extraTurnOnSix), AUTO_CONTINUE_MS);
+    const t = setTimeout(() => continueAfterFeedback(rules.extraTurnOnSix), AUTO_CONTINUE_MS[outcome]);
     return () => clearTimeout(t);
   }, [outcome, continueAfterFeedback, rules.extraTurnOnSix]);
 
@@ -120,8 +121,16 @@ export function QuestionModal({ game, question, rules }: QuestionModalProps) {
               <h2 className="mt-2 text-[clamp(1.6rem,3.2vw,2.6rem)] font-semibold leading-snug">{question.question}</h2>
               {asking && question.hint && (
                 <div className="mt-3 flex flex-wrap items-center gap-3">
-                  <Button size="sm" aria-expanded={hintOpen} aria-controls="question-hint" onClick={() => setHintOpen((v) => !v)}>
-                    <span aria-hidden="true">💡</span> {hintOpen ? 'Hide hint' : 'Hint'}
+                  <Button
+                    size="sm"
+                    aria-expanded={hintOpen}
+                    aria-controls="question-hint"
+                    onClick={() => {
+                      setHintOpen((v) => !v);
+                      document.getElementById('answer-input')?.focus();
+                    }}
+                  >
+                    <span aria-hidden="true">💡</span> Hint
                   </Button>
                   <p id="question-hint" aria-live="polite" className="text-lg text-ink-soft">
                     {hintOpen && (

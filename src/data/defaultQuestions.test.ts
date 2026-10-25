@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { DEFAULT_QUESTIONS } from './defaultQuestions';
-import { checkAnswer } from '../logic/answerMatch';
+import { checkAnswer, normalizeAnswer } from '../logic/answerMatch';
 import { DICE_NUMBERS } from '../types';
 
 const byId = new Map(DEFAULT_QUESTIONS.map((q) => [q.id, q]));
@@ -14,9 +14,20 @@ describe('built-in questions', () => {
     for (const n of DICE_NUMBERS) expect(DEFAULT_QUESTIONS.filter((q) => q.diceNumber === n)).toHaveLength(16);
     expect(byId.size).toBe(DEFAULT_QUESTIONS.length);
     for (const q of DEFAULT_QUESTIONS) {
-      expect(q.hint).toMatch(/^Leksiyon \d+ — \S/);
+      expect(q.hint).toMatch(/^Leksiyon \d+( — \S.*)?$/);
       expect(q.reference?.startsWith(q.hint!.split(' — ')[0] + ' ')).toBe(true);
     }
+  });
+
+  it('never gives the answer away in a hint', () => {
+    for (const q of DEFAULT_QUESTIONS) {
+      const title = ` ${normalizeAnswer(q.hint!.split(' — ')[1] ?? '')} `;
+      for (const a of q.acceptedAnswers) {
+        const answer = normalizeAnswer(a);
+        if (answer.length > 2) expect(title.includes(` ${answer} `), `${q.id}: "${q.hint}" contains "${a}"`).toBe(false);
+      }
+    }
+    expect(byId.get('ceb-1-01')!.hint).toBe('Leksiyon 5');
   });
 
   it('accepts what players would type for the new questions', () => {
@@ -34,6 +45,8 @@ describe('built-in questions', () => {
       ['ceb-5-14', 'natan'], ['ceb-5-15', 'zarepta'], ['ceb-5-16', 'nabot'],
       ['ceb-6-09', '185,000'], ['ceb-6-09', '185000'], ['ceb-6-10', 'ebed-melek'], ['ceb-6-11', 'belsazar'],
       ['ceb-6-12', '52'], ['ceb-6-13', 'siloam'], ['ceb-6-14', 'emmaus'], ['ceb-6-15', 'gamaliel'], ['ceb-6-16', 'patmos'],
+      ['ceb-6-16', 'isla sa Patmos'], ['ceb-6-14', 'lungsod sa Emmaus'], ['ceb-5-15', 'lungsod sa Zarepta'], ['ceb-5-09', 'yuta sa Gosen'],
+      ['ceb-6-13', 'linaw sa Siloe'], ['ceb-1-12', 'Apostol Pedro'], ['ceb-2-13', 'adlaw ug bulan'], ['ceb-3-11', 'Horeb'],
     ];
     for (const [id, answer] of typed) expect(accepts(id, answer), `${id} ← ${answer}`).toBe(true);
   });
