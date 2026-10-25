@@ -15,6 +15,14 @@ const OLD_ANSWERS: Record<string, string[][]> = {
   'ceb-2-04': [['tanom', 'tanom nga nagkalayo', 'kahoykahoy', 'sapinit']],
   'ceb-2-07': [['Juan', 'Juan nga Tigbawtismo', 'Juan Bautista', 'Juan Bawtista', 'John']],
   'ceb-6-07': [['Sheba', 'Seba', 'rayna sa Sheba', 'reyna sa Sheba']],
+  'ceb-3-12': [['Aaron', 'Aron']], // "aron" is a common Cebuano word, so it let wrong replies through
+};
+
+/** Question wording as earlier published versions shipped it, per id (reworded where it gave away another answer). */
+const OLD_TEXT: Record<string, string[]> = {
+  'ceb-1-07': ['Unsay ngalan sa asawa ni Adan nga gihimo gikan sa iyang gusok?'],
+  'ceb-1-08': ['Kinsa ang gibisita sa anghel nga si Gabriel ug giingnan nga manganak siyag lalaki nga nganlan ug Jesus?'],
+  'ceb-6-12': ['Sulod sa pila ka adlaw nahuman ang mga paril ug ganghaan sa Jerusalem sa panahon ni Nehemias?'],
 };
 
 const pairs = (jumps: { from: number; to: number }[]) => jumps.map((j) => `${j.from}>${j.to}`).sort().join(',');
@@ -31,9 +39,12 @@ export function upgradeQuestions(questions: Question[]): Question[] {
   const defaults = new Map(DEFAULT_QUESTIONS.map((q) => [q.id, q]));
   return questions.map((q) => {
     const fresh = defaults.get(q.id);
+    if (!fresh) return q;
     const saved = JSON.stringify(q.acceptedAnswers);
-    const untouched = !!fresh && q.question === fresh.question && (OLD_ANSWERS[q.id] ?? []).some((old) => JSON.stringify(old) === saved);
-    return untouched ? fresh : q;
+    const textUntouched = q.question === fresh.question || (OLD_TEXT[q.id] ?? []).includes(q.question);
+    const answersUntouched = saved === JSON.stringify(fresh.acceptedAnswers) || (OLD_ANSWERS[q.id] ?? []).some((old) => JSON.stringify(old) === saved);
+    const outdated = q.question !== fresh.question || saved !== JSON.stringify(fresh.acceptedAnswers);
+    return textUntouched && answersUntouched && outdated ? { ...fresh, hint: q.hint ?? fresh.hint } : q;
   });
 }
 
@@ -43,7 +54,7 @@ const builtInIds = (from: number, to: number) =>
 /** Built-in questions added on 2026-10-25 (ceb-1-09 … ceb-6-16), together with a lesson hint on every built-in question. */
 const ADDED_2026_10_25 = builtInIds(9, 16);
 /** Highest question number per dice in the second 2026-10-25 batch. */
-const LAST_IN_BATCH_B: Record<number, number> = { 1: 68, 2: 68, 3: 74, 4: 73, 5: 65, 6: 65 };
+export const LAST_IN_BATCH_B: Record<number, number> = { 1: 68, 2: 68, 3: 74, 4: 73, 5: 65, 6: 65 };
 /** Second batch, 2026-10-25: about 4 questions per lesson (ceb-<dice>-17 and up, see LAST_IN_BATCH_B). */
 const ADDED_2026_10_25_B = new Set(DEFAULT_QUESTIONS.filter((q) => {
   const [, dice, no] = q.id.split('-');

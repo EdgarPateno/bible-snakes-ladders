@@ -98,11 +98,9 @@ export function QuestionsTab() {
                 Asked on this device: <strong className="text-ink">{askedHere}</strong> of {questions.length}. Unasked questions come
                 first in every game; once all are used, the ones asked longest ago come back.
               </span>
-              {historyAsked.length > 0 && (
-                <Button size="sm" onClick={() => setConfirmHistoryReset(true)}>
-                  Reset question history
-                </Button>
-              )}
+              <Button size="sm" disabled={askedHere === 0} onClick={() => setConfirmHistoryReset(true)}>
+                Reset question history
+              </Button>
             </p>
           </div>
           <div className="flex flex-wrap gap-2">

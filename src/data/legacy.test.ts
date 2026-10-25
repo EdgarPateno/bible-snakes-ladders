@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { addQuestionsOf20261025, upgradeBoard, upgradeQuestions } from './legacy';
+import { LAST_IN_BATCH_B, addQuestionsOf20261025, upgradeBoard, upgradeQuestions } from './legacy';
 import type { Question } from '../types';
 import { classicLayout } from '../logic/board';
 import { DEFAULT_QUESTIONS } from './defaultQuestions';
@@ -41,5 +41,25 @@ describe('upgrading saved settings', () => {
     const own = [{ id: 'q-1', diceNumber: 1, question: 'Who?', acceptedAnswers: ['me'] }];
     expect(addQuestionsOf20261025(own)).toBe(own);
     expect(addQuestionsOf20261025('garbage')).toBe('garbage');
+  });
+  it('the per-lesson batch bounds cover exactly the built-in ids from 17 up (update them with the next batch)', () => {
+    for (const q of DEFAULT_QUESTIONS) {
+      const [, dice, no] = q.id.split('-').map(Number);
+      if (no >= 17) expect(no, q.id).toBeLessThanOrEqual(LAST_IN_BATCH_B[dice]);
+    }
+    for (const dice of [1, 2, 3, 4, 5, 6]) {
+      expect(DEFAULT_QUESTIONS.some((q) => q.id === `ceb-${dice}-${LAST_IN_BATCH_B[dice]}`)).toBe(true);
+    }
+  });
+  it('upgrades the old "Aaron | Aron" list and the reworded question texts, keeping host edits', () => {
+    const fresh = DEFAULT_QUESTIONS.find((q) => q.id === 'ceb-3-12')!;
+    const oldAaron = { ...fresh, acceptedAnswers: ['Aaron', 'Aron'] };
+    const eve = DEFAULT_QUESTIONS.find((q) => q.id === 'ceb-1-07')!;
+    const oldEve = { ...eve, question: 'Unsay ngalan sa asawa ni Adan nga gihimo gikan sa iyang gusok?' };
+    const hostEve = { ...oldEve, acceptedAnswers: ['Eva'] };
+    const [a, b, c] = upgradeQuestions([oldAaron, oldEve, hostEve]);
+    expect(a.acceptedAnswers).toEqual(['Aaron']);
+    expect(b.question).toBe(eve.question);
+    expect(c).toBe(hostEve);
   });
 });

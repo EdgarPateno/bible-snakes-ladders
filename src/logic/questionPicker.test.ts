@@ -65,7 +65,12 @@ describe('device history across games', () => {
     expect(pickQuestion(1, questions, [], history).question!.id).toBe('b');
     expect(pickQuestion(1, questions, ['b'], history).question!.id).toBe('c');
   });
-  it('borrows an unseen question from another number before repeating an old one', () => {
+  it('keeps the difficulty band: repeats the band oldest before using an unseen question of another band', () => {
+    // a b c (1) and d (2) were all seen; e (5) never was. A roll of 1 stays easy.
+    expect(pickQuestion(1, questions, [], ['c', 'a', 'd', 'b']).question!.id).toBe('c');
+    expect(pickQuestion(6, questions, [], ['c', 'a', 'd', 'b']).question!.id).toBe('e');
+  });
+  it('uses the same-difficulty partner\'s unseen question before repeating', () => {
     expect(pickQuestion(1, questions, [], ['a', 'b', 'c']).question!.id).toBe('d');
   });
   it('records each id once, newest last, within the cap', () => {

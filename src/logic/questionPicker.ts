@@ -6,7 +6,8 @@ export interface PickResult {
   question: Question | null;
   /** Ids asked so far this game, including this one. */
   asked: string[];
-  /** True when the question came from another dice number because the rolled one had none left. */
+  /** True when the question came from another dice number (its same-difficulty partner, or a nearer band when the
+   *  rolled band has nothing left that is unasked this game). */
   borrowed: boolean;
 }
 
@@ -18,11 +19,11 @@ export function borrowOrder(dice: DiceNumber): DiceNumber[] {
 }
 
 /**
- * Pick a question for the rolled number that has not been asked this game. Questions never asked on this
- * device (`history`, oldest first) come first; when all of them have been seen in earlier games, the one
- * asked longest ago comes next. When the rolled number has none left, borrow from the closest number
- * (see borrowOrder). Only after every question has been asked in this game does the game's list start
- * over, never with the question just asked.
+ * Pick a question for the rolled number that has not been asked this game, keeping its difficulty band
+ * (1-2 easy, 3-4 medium, 5-6 hard): a question never asked on this device (`history`, oldest first) from the
+ * rolled number, then from its partner, else the band's question asked longest ago. Only when the band has
+ * nothing left this game does it borrow from the nearest other number. After every question has been asked
+ * in this game, the game's list starts over, never with the question just asked.
  */
 export function pickQuestion(
   dice: DiceNumber,
@@ -41,14 +42,22 @@ export function pickQuestion(
     gameAsked = [];
   }
   const seenAt = new Map(history.map((id, i) => [id, i]));
-  const unseen = fresh.filter((q) => !seenAt.has(q.id));
-  for (const n of borrowOrder(dice)) {
-    const pool = (unseen.length ? unseen : fresh).filter((q) => q.diceNumber === n);
-    if (pool.length === 0) continue;
-    const question = unseen.length
-      ? pool[Math.min(pool.length - 1, Math.floor(rand() * pool.length))]
-      : pool.reduce((oldest, q) => ((seenAt.get(q.id) ?? 0) < (seenAt.get(oldest.id) ?? 0) ? q : oldest));
-    return { question, asked: [...gameAsked, question.id], borrowed: n !== dice };
+  // Same difficulty first: the rolled number and its partner (1-2, 3-4, 5-6), then the nearest other numbers.
+  // Within a group: a question never asked on this device, else the one asked longest ago.
+  const [own, partner, ...rest] = borrowOrder(dice);
+  for (const group of [[own, partner], ...rest.map((n) => [n])]) {
+    for (const n of group) {
+      const unseen = fresh.filter((q) => q.diceNumber === n && !seenAt.has(q.id));
+      if (unseen.length) {
+        const question = unseen[Math.min(unseen.length - 1, Math.floor(rand() * unseen.length))];
+        return { question, asked: [...gameAsked, question.id], borrowed: n !== dice };
+      }
+    }
+    const seen = fresh.filter((q) => group.includes(q.diceNumber));
+    if (seen.length) {
+      const question = seen.reduce((oldest, q) => ((seenAt.get(q.id) ?? 0) < (seenAt.get(oldest.id) ?? 0) ? q : oldest));
+      return { question, asked: [...gameAsked, question.id], borrowed: question.diceNumber !== dice };
+    }
   }
   return { question: null, asked, borrowed: false };
 }

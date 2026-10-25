@@ -92,7 +92,7 @@
       "id": "ceb-1-07",
       "diceNumber": 1,
       "difficulty": "easy",
-      "question": "Unsay ngalan sa asawa ni Adan nga gihimo gikan sa iyang gusok?",
+      "question": "Unsay ngalan sa unang babaye nga gihimo ni Jehova ingong asawa ni Adan?",
       "acceptedAnswers": [
         "Eva",
         "Eba",
@@ -106,7 +106,7 @@
       "id": "ceb-1-08",
       "diceNumber": 1,
       "difficulty": "easy",
-      "question": "Kinsa ang gibisita sa anghel nga si Gabriel ug giingnan nga manganak siyag lalaki nga nganlan ug Jesus?",
+      "question": "Kinsa ang gibisita sa usa ka anghel ug giingnan nga manganak siyag lalaki nga nganlan ug Jesus?",
       "acceptedAnswers": [
         "Maria",
         "Mary"
@@ -159,7 +159,7 @@
       "id": "ceb-1-12",
       "diceNumber": 1,
       "difficulty": "easy",
-      "question": "Kinsa ang apostoles nga mikanaog sa sakayan ug milakaw ibabaw sa tubig paingon kang Jesus?",
+      "question": "Kinsa ang apostol nga mikanaog sa sakayan ug milakaw ibabaw sa tubig paingon kang Jesus?",
       "acceptedAnswers": [
         "Pedro",
         "Simon Pedro",
@@ -189,7 +189,7 @@
       "id": "ceb-1-14",
       "diceNumber": 1,
       "difficulty": "easy",
-      "question": "Kinsa ang apostoles nga gitunolan ni Jesus ug tinapay ingong ilhanan nga siya ang motraydor kaniya?",
+      "question": "Kinsa ang apostol nga gitunolan ni Jesus ug tinapay ingong ilhanan nga siya ang motraydor kaniya?",
       "acceptedAnswers": [
         "Judas",
         "Judas Iskariote",
@@ -226,20 +226,6 @@
       "reference": "Leksiyon 1 · Genesis 1:1-26",
       "hint": "Leksiyon 1 — Gihimo sa Diyos ang Langit ug Yuta",
       "explanation": "Sa wala pa himoa ni Jehova ang mga butang nga makita, naghimo siyag daghan kaayong anghel."
-    },
-    {
-      "id": "ceb-1-17",
-      "diceNumber": 1,
-      "difficulty": "easy",
-      "question": "Unsang dakong hayop ang gihatag nga panig-ingnan sa dagkong hayop nga gihimo ni Jehova?",
-      "acceptedAnswers": [
-        "elepante",
-        "elephant",
-        "elefante"
-      ],
-      "reference": "Leksiyon 1 · Genesis 1:1-26",
-      "hint": "Leksiyon 1 — Gihimo sa Diyos ang Langit ug Yuta",
-      "explanation": "Gihimo ni Jehova ang gagmay ug dagkong hayop, pareho sa elepante."
     },
     {
       "id": "ceb-1-18",
@@ -482,7 +468,6 @@
       "acceptedAnswers": [
         "iyang bugtong anak nga babaye",
         "anak nga babaye",
-        "iyang anak",
         "daughter"
       ],
       "reference": "Leksiyon 36 · Maghuhukom 11:34",
@@ -700,7 +685,7 @@
       "id": "ceb-1-50",
       "diceNumber": 1,
       "difficulty": "easy",
-      "question": "Kinsa ang Israelinhong sulugoon ni Haring Artajerjes nga nangayo nga paadtoon siya sa Jerusalem aron tukoron pag-usab ang mga paril?",
+      "question": "Kinsa ang Israelinhong sulugoon sa hari sa Persia nga nangayo nga paadtoon siya sa Jerusalem aron tukoron pag-usab ang mga paril?",
       "acceptedAnswers": [
         "Nehemias",
         "Nehemiah"
@@ -963,7 +948,7 @@
       "id": "ceb-1-68",
       "diceNumber": 1,
       "difficulty": "easy",
-      "question": "Unsay saad ni Jehova nga iyang pahiran gikan sa mata sa mga tawo?",
+      "question": "Unsay gisaad ni Jehova nga iyang pahiran gikan sa mata sa mga tawo?",
       "acceptedAnswers": [
         "luha",
         "tanang luha",
@@ -1547,7 +1532,7 @@
       "id": "ceb-2-40",
       "diceNumber": 2,
       "difficulty": "easy",
-      "question": "Kinsa ang daotang asawa ni Haring Ahab nga nagplano nga patyon si Nabot?",
+      "question": "Kinsa ang daotang asawa ni Haring Ahab nga nagplano nga patyon ang tag-iya sa ubasan?",
       "acceptedAnswers": [
         "Jezebel",
         "Jesebel",
@@ -1807,7 +1792,7 @@
       "id": "ceb-2-58",
       "diceNumber": 2,
       "difficulty": "easy",
-      "question": "Pila ka gagmayng isda ang naa uban sa mga tinapay?",
+      "question": "Dihang gipakaon ni Jesus ang libolibo ka tawo, pila ka gagmayng isda ang naa uban sa mga tinapay?",
       "acceptedAnswers": [
         "duha",
         "2",
@@ -1833,21 +1818,6 @@
       "reference": "Leksiyon 85 · Juan 9:1-41",
       "hint": "Leksiyon 85 — Si Jesus Nang-ayo Panahon sa Igpapahulay",
       "explanation": "Ang mga Pariseo naglagot kang Jesus ug nangitag paagi nga mapadakop siya."
-    },
-    {
-      "id": "ceb-2-60",
-      "diceNumber": 2,
-      "difficulty": "easy",
-      "question": "Unsang okasyon sa mga Hudiyo ang gisaulog ni Jesus ug sa mga apostoles sa tuig 33 C.E.?",
-      "acceptedAnswers": [
-        "Paskuwa",
-        "Paskwa",
-        "Pascua",
-        "Passover"
-      ],
-      "reference": "Leksiyon 87 · Mateo 26:20-30",
-      "hint": "Leksiyon 87 — Ang Kataposang Panihapon ni Jesus",
-      "explanation": "Gisaulog ni Jesus ug sa mga apostoles ang Paskuwa sa tuig 33 C.E."
     },
     {
       "id": "ceb-2-61",
@@ -1881,7 +1851,7 @@
       "id": "ceb-2-63",
       "diceNumber": 2,
       "difficulty": "easy",
-      "question": "Kinsa ang apostoles nga miambak sa dagat ug milangoy paingon sa baybay?",
+      "question": "Kinsa ang apostol nga miambak sa dagat ug milangoy paingon sa baybay?",
       "acceptedAnswers": [
         "Pedro",
         "Peter",
@@ -2181,21 +2151,6 @@
       "explanation": "Giingnan ni Jehova si Elias nga pahibaloon si Eliseo nga siya ang mopuli niya nga propeta."
     },
     {
-      "id": "ceb-3-17",
-      "diceNumber": 3,
-      "difficulty": "medium",
-      "question": "Unsang gamay nga hayop ang gihatag nga panig-ingnan sa gagmayng hayop nga gihimo ni Jehova?",
-      "acceptedAnswers": [
-        "rabbit",
-        "kuneho",
-        "koneho",
-        "conejo"
-      ],
-      "reference": "Leksiyon 1 · Genesis 1:1-26",
-      "hint": "Leksiyon 1 — Gihimo sa Diyos ang Langit ug Yuta",
-      "explanation": "Gihimo ni Jehova ang gagmayng hayop, pareho sa rabbit."
-    },
-    {
       "id": "ceb-3-18",
       "diceNumber": 3,
       "difficulty": "medium",
@@ -2203,6 +2158,8 @@
       "acceptedAnswers": [
         "mamatay",
         "mamatay sila",
+        "mangamatay",
+        "mangamatay sila",
         "kamatayon",
         "die",
         "death"
@@ -2225,22 +2182,6 @@
       "reference": "Leksiyon 4 · Genesis 4:1-12",
       "hint": "Leksiyon 4 — Nasuko ug Nakapatay",
       "explanation": "Ang halad usa ka espesyal nga regalo para kang Jehova."
-    },
-    {
-      "id": "ceb-3-20",
-      "diceNumber": 3,
-      "difficulty": "medium",
-      "question": "Asa napatong ang arka dihang anam-anam nga mihubas ang tubig?",
-      "acceptedAnswers": [
-        "bukid",
-        "sa bukid",
-        "kabukiran",
-        "mountain",
-        "Ararat"
-      ],
-      "reference": "Leksiyon 6 · Genesis 7:1–9:17",
-      "hint": "Leksiyon 6 — Walo ka Tawo Naluwas",
-      "explanation": "Pagkahubas sa tubig, napatong ang arka sa bukid."
     },
     {
       "id": "ceb-3-21",
@@ -2373,6 +2314,8 @@
       "question": "Pila ka tuig human sa pagbiya sa Ehipto nahuman sa mga Israelinhon ang tabernakulo?",
       "acceptedAnswers": [
         "usa ka tuig",
+        "usa ra ka tuig",
+        "1 ka tuig",
         "1",
         "usa",
         "uno",
@@ -2386,7 +2329,7 @@
       "id": "ceb-3-31",
       "diceNumber": 3,
       "difficulty": "medium",
-      "question": "Unsay gisugo ni Moises nga dad-on ni Kore ug sa iyang mga kauban sa tabernakulo?",
+      "question": "Unsay gisugo ni Moises nga dad-on sa mga mirebelde ngadto sa tabernakulo?",
       "acceptedAnswers": [
         "insensaryo",
         "mga insensaryo",
@@ -2682,7 +2625,7 @@
       "id": "ceb-3-52",
       "diceNumber": 3,
       "difficulty": "medium",
-      "question": "Unsang katungdanan sa Juda ang gihatag ni Haring Artajerjes kang Nehemias?",
+      "question": "Unsang katungdanan sa Juda ang gihatag sa hari sa Persia sa tawo nga nagtukod pag-usab sa mga paril sa Jerusalem?",
       "acceptedAnswers": [
         "gobernador",
         "governor",
@@ -2717,22 +2660,6 @@
       "reference": "Leksiyon 71 · Mateo 2:1-23",
       "hint": "Leksiyon 71 — Gipanalipdan ni Jehova si Jesus",
       "explanation": "Una silang gidala sa “bituon” sa Jerusalem, diin nakadungog si Herodes bahin sa bag-ong hari."
-    },
-    {
-      "id": "ceb-3-55",
-      "diceNumber": 3,
-      "difficulty": "medium",
-      "question": "Unsang pista ang gitambongan sa pamilya ni Jesus sa Jerusalem kada tuig?",
-      "acceptedAnswers": [
-        "Paskuwa",
-        "Paskua",
-        "Pascua",
-        "Passover",
-        "Pista sa Paskuwa"
-      ],
-      "reference": "Leksiyon 72 · Lucas 2:40-52",
-      "hint": "Leksiyon 72 — Ang Bata nga si Jesus",
-      "explanation": "Kada tuig moadto sa Jerusalem ang pamilya ni Jesus para sa Paskuwa."
     },
     {
       "id": "ceb-3-56",
@@ -3252,7 +3179,7 @@
       "id": "ceb-4-18",
       "diceNumber": 4,
       "difficulty": "medium",
-      "question": "Asa gidapit ni Cain si Abel sa wala pa niya siya patya?",
+      "question": "Asa gidapit ni Cain si Abel ayha niya kini gipatay?",
       "acceptedAnswers": [
         "uma",
         "sa uma",
@@ -3324,7 +3251,7 @@
       "id": "ceb-4-23",
       "diceNumber": 4,
       "difficulty": "medium",
-      "question": "Pila ka anak si Jacob?",
+      "question": "Pila ka anak nga lalaki si Jacob?",
       "acceptedAnswers": [
         "12",
         "napulog duha",
@@ -3802,7 +3729,7 @@
       "id": "ceb-4-56",
       "diceNumber": 4,
       "difficulty": "medium",
-      "question": "Samag unsang langgam ang espiritu sa Diyos nga nanaog kang Jesus human sa iyang bawtismo?",
+      "question": "Samag unsa ang espiritu sa Diyos nga nanaog kang Jesus human sa iyang bawtismo?",
       "acceptedAnswers": [
         "salampati",
         "kalapati",
@@ -3891,7 +3818,7 @@
       "id": "ceb-4-62",
       "diceNumber": 4,
       "difficulty": "medium",
-      "question": "Pila ka basket ang napuno sa sobra nga pagkaon nga gihipos sa mga apostoles?",
+      "question": "Pila ka basket ang napuno sa sobrang pagkaon human nabusog ang 5,000 ka lalaki?",
       "acceptedAnswers": [
         "12",
         "napulog duha",
@@ -3922,7 +3849,7 @@
       "id": "ceb-4-64",
       "diceNumber": 4,
       "difficulty": "medium",
-      "question": "Kinsa ang igsoon ni Lazaro nga nagdalidali sa pagsugat kang Jesus dihang miabot siya sa Betania?",
+      "question": "Kinsa ang igsoong babaye nga nagdalidali sa pagsugat kang Jesus dihang miabot siya sa Betania human mamatay ang iyang igsoon?",
       "acceptedAnswers": [
         "Marta",
         "Martha"
@@ -4603,7 +4530,7 @@
       "id": "ceb-5-39",
       "diceNumber": 5,
       "difficulty": "hard",
-      "question": "Asang lugar ang ilang gubatan nga gimartsahan sa katawhan gikan sa Jerusalem?",
+      "question": "Asang lugara nagmartsa ang katawhan ni Jehosapat gikan sa Jerusalem aron makiggubat?",
       "acceptedAnswers": [
         "Tekoa",
         "Tecoa",
@@ -4870,7 +4797,7 @@
       "id": "ceb-5-57",
       "diceNumber": 5,
       "difficulty": "hard",
-      "question": "Sa unsang bulana, petsa 14, saulogon sa mga Hudiyo kada tuig ang Paskuwa?",
+      "question": "Sa unsang bulana, petsa 14, saulogon sa mga Hudiyo kada tuig ang paghinumdom sa ilang pagkagawas sa Ehipto?",
       "acceptedAnswers": [
         "Nisan",
         "bulan sa Nisan"
@@ -5152,7 +5079,7 @@
       "id": "ceb-6-12",
       "diceNumber": 6,
       "difficulty": "hard",
-      "question": "Sulod sa pila ka adlaw nahuman ang mga paril ug ganghaan sa Jerusalem sa panahon ni Nehemias?",
+      "question": "Sulod sa pila ka adlaw nahuman pagtukod pag-usab ang mga paril ug ganghaan sa Jerusalem?",
       "acceptedAnswers": [
         "52",
         "52 ka adlaw",
@@ -5354,7 +5281,7 @@
       "id": "ceb-6-26",
       "diceNumber": 6,
       "difficulty": "hard",
-      "question": "Pila ka adlaw ang gihulat sa mga Israelinhon ayha nakigsulti si Jehova kanila sa Bukid sa Sinai?",
+      "question": "Pila ka adlaw ang gihulat sa mga Israelinhon ayha nakigsulti si Jehova kanila gikan sa bukid?",
       "acceptedAnswers": [
         "tulo ka adlaw",
         "tulo",
@@ -5781,7 +5708,7 @@
       "id": "ceb-6-55",
       "diceNumber": 6,
       "difficulty": "hard",
-      "question": "Kang kinsa nga anak ang usa sa duha ka apostoles nga ginganlag Santiago?",
+      "question": "Kinsa ang amahan sa ikaduhang apostol nga ginganlag Santiago?",
       "acceptedAnswers": [
         "Alfeo",
         "Alphaeus",
@@ -5906,7 +5833,7 @@
       "id": "ceb-6-64",
       "diceNumber": 6,
       "difficulty": "hard",
-      "question": "Kinsa ang gobernador nga mihusay kang Pablo didto sa Cesarea?",
+      "question": "Kinsa ang gobernador nga mihusay kang Pablo ug miingon: “Sa Cesar ka moadto”?",
       "acceptedAnswers": [
         "Festo",
         "Gobernador Festo",

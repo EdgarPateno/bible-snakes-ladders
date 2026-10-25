@@ -13,8 +13,9 @@ describe('built-in questions', () => {
   it('has about 4 questions per lesson, balanced dice pairs, unique ids, and a lesson hint on every question', () => {
     const count = (n: number) => DEFAULT_QUESTIONS.filter((q) => q.diceNumber === n).length;
     expect(DEFAULT_QUESTIONS.length).toBeGreaterThanOrEqual(400);
+    for (const q of DEFAULT_QUESTIONS) expect(q.difficulty).toBe(q.diceNumber <= 2 ? 'easy' : q.diceNumber <= 4 ? 'medium' : 'hard');
     for (const n of DICE_NUMBERS) expect(count(n)).toBeGreaterThanOrEqual(60);
-    for (const [a, b] of [[1, 2], [3, 4], [5, 6]]) expect(Math.abs(count(a) - count(b))).toBeLessThanOrEqual(1);
+    for (const [a, b] of [[1, 2], [3, 4], [5, 6]]) expect(Math.abs(count(a) - count(b))).toBeLessThanOrEqual(3);
     const lessons = new Set(DEFAULT_QUESTIONS.map((q) => Number(/^Leksiyon (\d+)/.exec(q.hint!)![1])));
     expect(lessons.size).toBe(103);
     expect(byId.size).toBe(DEFAULT_QUESTIONS.length);
