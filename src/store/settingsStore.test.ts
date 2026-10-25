@@ -19,7 +19,13 @@ describe('saved settings from before 2026-10-25', () => {
     expect(questions[0].hint).toBeUndefined();
     expect(questions.filter((q) => q.hint)).toHaveLength(DEFAULT_QUESTIONS.length - 1);
     expect(questions.find((q) => q.id === 'q-own')).toMatchObject(own);
-    expect(JSON.parse(safeStorage.getItem('bsl:settings:v1') as string).version).toBe(2);
+    expect(JSON.parse(safeStorage.getItem('bsl:settings:v1') as string).version).toBe(3);
+
+    // A version-2 save (after the first batch) gets only the per-lesson batch added.
+    const v2 = DEFAULT_QUESTIONS.filter((q) => Number(q.id.split('-')[2]) <= 16);
+    safeStorage.setItem('bsl:settings:v1', JSON.stringify({ state: { ...DEFAULT_SETTINGS, questions: v2 }, version: 2 }));
+    await useSettings.persist.rehydrate();
+    expect(useSettings.getState().questions.map((q) => q.id).sort()).toEqual(DEFAULT_QUESTIONS.map((q) => q.id).sort());
 
     // A host who later deletes a new question does not get it back on the next load.
     useSettings.getState().deleteQuestion('ceb-6-16');

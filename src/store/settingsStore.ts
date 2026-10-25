@@ -3,7 +3,7 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 import type { BoardConfig, Player, Question, Rules, Settings } from '../types';
 import { DEFAULT_SETTINGS, MAX_PLAYERS, MIN_PLAYERS, PLAYER_COLORS, PLAYER_TOKENS } from '../data/defaults';
 import { sanitizeSettings } from '../logic/importExport';
-import { addQuestionsOf20261025, upgradeBoard, upgradeQuestions } from '../data/legacy';
+import { addQuestionsOf20261025, addQuestionsOf20261025b, upgradeBoard, upgradeQuestions } from '../data/legacy';
 import { DEFAULT_QUESTIONS } from '../data/defaultQuestions';
 import { safeStorage } from '../lib/storage';
 import { uid } from '../lib/random';
@@ -91,15 +91,16 @@ export const useSettings = create<SettingsState>()(
     {
       name: 'bsl:settings:v1',
       // 2 (2026-10-25): 48 more built-in questions and a lesson hint on each built-in question.
-      version: 2,
+      // 3 (2026-10-25): about 4 built-in questions per lesson.
+      version: 3,
       storage: createJSONStorage(() => safeStorage),
       partialize: (s) => ({ version: 1, players: s.players, questions: s.questions, board: s.board, rules: s.rules }),
       migrate: (persisted, version) => {
-        if (version < 2 && persisted && typeof persisted === 'object') {
-          const p = persisted as { questions?: unknown };
-          return { ...p, questions: addQuestionsOf20261025(p.questions) };
-        }
-        return persisted;
+        if (!persisted || typeof persisted !== 'object') return persisted;
+        let questions = (persisted as { questions?: unknown }).questions;
+        if (version < 2) questions = addQuestionsOf20261025(questions);
+        if (version < 3) questions = addQuestionsOf20261025b(questions);
+        return { ...persisted, questions };
       },
       merge: (persisted, current) => {
         if (!persisted) return current;

@@ -31,7 +31,7 @@ describe('upgrading saved settings', () => {
     const edited = { ...before[0], question: 'My own wording?' };
     const custom: Question = { id: 'q-own', diceNumber: 2, question: 'Mine?', acceptedAnswers: ['yes'] };
     const out = addQuestionsOf20261025([edited, ...before.slice(1), custom]) as Question[];
-    expect(out).toHaveLength(DEFAULT_QUESTIONS.length + 1);
+    expect(out).toHaveLength(DEFAULT_QUESTIONS.filter((q) => Number(q.id.split('-')[2]) <= 16).length + 1);
     expect(out[0]).toBe(edited);
     expect(out[1].hint).toBe(DEFAULT_QUESTIONS.find((q) => q.id === before[1].id)!.hint);
     expect(out.find((q) => q.id === 'q-own')).toBe(custom);

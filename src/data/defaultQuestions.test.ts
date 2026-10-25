@@ -10,8 +10,13 @@ const accepts = (id: string, typed: string) => {
 };
 
 describe('built-in questions', () => {
-  it('has 16 per dice number, unique ids, and a lesson hint on every question', () => {
-    for (const n of DICE_NUMBERS) expect(DEFAULT_QUESTIONS.filter((q) => q.diceNumber === n)).toHaveLength(16);
+  it('has about 4 questions per lesson, balanced dice pairs, unique ids, and a lesson hint on every question', () => {
+    const count = (n: number) => DEFAULT_QUESTIONS.filter((q) => q.diceNumber === n).length;
+    expect(DEFAULT_QUESTIONS.length).toBeGreaterThanOrEqual(400);
+    for (const n of DICE_NUMBERS) expect(count(n)).toBeGreaterThanOrEqual(60);
+    for (const [a, b] of [[1, 2], [3, 4], [5, 6]]) expect(Math.abs(count(a) - count(b))).toBeLessThanOrEqual(1);
+    const lessons = new Set(DEFAULT_QUESTIONS.map((q) => Number(/^Leksiyon (\d+)/.exec(q.hint!)![1])));
+    expect(lessons.size).toBe(103);
     expect(byId.size).toBe(DEFAULT_QUESTIONS.length);
     for (const q of DEFAULT_QUESTIONS) {
       expect(q.hint).toMatch(/^Leksiyon \d+( — \S.*)?$/);
@@ -49,6 +54,16 @@ describe('built-in questions', () => {
       ['ceb-6-13', 'linaw sa Siloe'], ['ceb-1-12', 'Apostol Pedro'], ['ceb-2-13', 'adlaw ug bulan'], ['ceb-3-11', 'Horeb'],
     ];
     for (const [id, answer] of typed) expect(accepts(id, answer), `${id} ← ${answer}`).toBe(true);
+  });
+
+  it('accepts only "Aaron" for Aaron, never "Aron" (a common Cebuano word)', () => {
+    const aaron = DEFAULT_QUESTIONS.filter((q) => q.acceptedAnswers.includes('Aaron'));
+    expect(aaron.length).toBeGreaterThanOrEqual(3);
+    for (const q of aaron) {
+      expect(q.acceptedAnswers).toEqual(['Aaron']);
+      expect(checkAnswer('Aron', q.acceptedAnswers, true, q.question)).toBe(false);
+      expect(checkAnswer('si Moises aron', q.acceptedAnswers, true, q.question)).toBe(false);
+    }
   });
 
   it('rejects wrong answers to the new questions', () => {

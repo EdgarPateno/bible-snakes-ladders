@@ -1,5 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { isUsableGame, useGame } from './gameStore';
+import { useHistory } from './historyStore';
 import { DEFAULT_SETTINGS } from '../data/defaults';
 import type { Settings } from '../types';
 
@@ -26,7 +27,10 @@ function playTurn(roll: number, outcome: 'correct' | 'wrong', extraTurnOnSix = f
 }
 
 describe('game flow', () => {
-  beforeEach(() => useGame.getState().startGame(settings));
+  beforeEach(() => {
+    useHistory.getState().reset();
+    useGame.getState().startGame(settings);
+  });
   afterEach(() => vi.restoreAllMocks());
 
   it('never asks the same question twice in a game until all have been asked', () => {
@@ -39,6 +43,16 @@ describe('game flow', () => {
       seen.add(id);
     }
     expect(seen.size).toBe(settings.questions.length);
+  });
+
+  it('a new game on the same device asks questions the earlier game did not', () => {
+    for (let i = 0; i < 40; i++) playTurn((i % 6) + 1, 'wrong');
+    const first = new Set(useGame.getState().game!.asked!);
+    useGame.getState().startGame(settings);
+    for (let i = 0; i < 40; i++) playTurn((i % 6) + 1, 'wrong');
+    const second = useGame.getState().game!.asked!;
+    expect(second.filter((id) => first.has(id))).toEqual([]);
+    expect(useHistory.getState().asked).toHaveLength(80);
   });
 
   it('keeps a game saved before 2026-10-25 (per-number bags) playable without repeating its asked questions', () => {

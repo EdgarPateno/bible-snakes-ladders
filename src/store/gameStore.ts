@@ -7,6 +7,7 @@ import { askedFromBags, pickQuestion } from '../logic/questionPicker';
 import { buildMoveSteps } from '../logic/movement';
 import { nextTurnIndex, shuffleOrder } from '../logic/turns';
 import { safeStorage } from '../lib/storage';
+import { useHistory } from './historyStore';
 import { randInt, uid } from '../lib/random';
 
 interface GameActions {
@@ -125,7 +126,8 @@ export const useGame = create<GameStore>()(
       rollLanded: (questions, exactFinish) => {
         const g = get().game;
         if (!g || g.phase !== 'rolling' || !g.roll) return;
-        const pick = pickQuestion(g.roll as DiceNumber, questions, g.asked ?? askedFromBags(g.bags, g.lastAsked, questions));
+        const history = useHistory.getState();
+        const pick = pickQuestion(g.roll as DiceNumber, questions, g.asked ?? askedFromBags(g.bags, g.lastAsked, questions), history.asked);
         if (!pick.question) {
           // No questions at all: let the roll count so the game can still be played.
           set({ game: { ...g, phase: 'question', questionId: null } });
@@ -135,6 +137,7 @@ export const useGame = create<GameStore>()(
         set({
           game: { ...g, phase: 'question', questionId: pick.question.id, askedAt: Date.now(), asked: pick.asked, bags: undefined, lastAsked: undefined },
         });
+        history.record(pick.question.id);
       },
 
       replaceMissingQuestion: (questions, exactFinish) => {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { askedFromBags, borrowOrder, pickQuestion } from './questionPicker';
+import { askedFromBags, borrowOrder, pickQuestion, recordAsked } from './questionPicker';
 import { DEFAULT_QUESTIONS } from '../data/defaultQuestions';
 import type { DiceNumber, Question } from '../types';
 
@@ -53,6 +53,24 @@ describe('pickQuestion', () => {
   it('ignores asked ids that no longer exist and returns null with no questions', () => {
     expect(pickQuestion(1, questions, ['gone', 'a', 'b']).question!.id).toBe('c');
     expect(pickQuestion(3, [], []).question).toBeNull();
+  });
+});
+
+describe('device history across games', () => {
+  it('asks questions never seen on this device first', () => {
+    for (let i = 0; i < 20; i++) expect(pickQuestion(1, questions, [], ['a', 'b']).question!.id).toBe('c');
+  });
+  it('when every question was seen in earlier games, asks the one asked longest ago', () => {
+    const history = ['b', 'c', 'a', 'd', 'e']; // b is the oldest for dice 1
+    expect(pickQuestion(1, questions, [], history).question!.id).toBe('b');
+    expect(pickQuestion(1, questions, ['b'], history).question!.id).toBe('c');
+  });
+  it('borrows an unseen question from another number before repeating an old one', () => {
+    expect(pickQuestion(1, questions, [], ['a', 'b', 'c']).question!.id).toBe('d');
+  });
+  it('records each id once, newest last, within the cap', () => {
+    expect(recordAsked(['a', 'b', 'c'], 'a')).toEqual(['b', 'c', 'a']);
+    expect(recordAsked(['a', 'b', 'c'], 'd', 3)).toEqual(['b', 'c', 'd']);
   });
 });
 

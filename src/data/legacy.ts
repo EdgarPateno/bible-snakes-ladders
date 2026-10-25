@@ -37,22 +37,38 @@ export function upgradeQuestions(questions: Question[]): Question[] {
   });
 }
 
+const builtInIds = (from: number, to: number) =>
+  new Set([1, 2, 3, 4, 5, 6].flatMap((dice) => Array.from({ length: to - from + 1 }, (_, i) => `ceb-${dice}-${String(from + i).padStart(2, '0')}`)));
+
 /** Built-in questions added on 2026-10-25 (ceb-1-09 … ceb-6-16), together with a lesson hint on every built-in question. */
-const ADDED_2026_10_25 = new Set([1, 2, 3, 4, 5, 6].flatMap((dice) => [9, 10, 11, 12, 13, 14, 15, 16].map((n) => `ceb-${dice}-${n.toString().padStart(2, '0')}`)));
+const ADDED_2026_10_25 = builtInIds(9, 16);
+/** Highest question number per dice in the second 2026-10-25 batch. */
+const LAST_IN_BATCH_B: Record<number, number> = { 1: 68, 2: 68, 3: 74, 4: 73, 5: 65, 6: 65 };
+/** Second batch, 2026-10-25: about 4 questions per lesson (ceb-<dice>-17 and up, see LAST_IN_BATCH_B). */
+const ADDED_2026_10_25_B = new Set(DEFAULT_QUESTIONS.filter((q) => {
+  const [, dice, no] = q.id.split('-');
+  return Number(no) >= 17 && Number(no) <= (LAST_IN_BATCH_B[Number(dice)] ?? 0);
+}).map((q) => q.id));
 
 /**
- * One-time upgrade of settings saved before 2026-10-25. Only for a list that still holds built-in questions:
- * a built-in whose text is unchanged gets its lesson hint, and the new built-in questions are added.
+ * One-time upgrade of saved settings. Only for a list that still holds original built-in questions:
+ * a built-in whose text is unchanged gets its lesson hint, and the given new built-in questions are added.
  * A list of the host's own questions is left alone.
  */
-export function addQuestionsOf20261025(questions: unknown): unknown {
+function addBuiltIns(questions: unknown, added: Set<string>): unknown {
   if (!Array.isArray(questions)) return questions;
   const defaults = new Map(DEFAULT_QUESTIONS.map((q) => [q.id, q]));
   const ids = new Set(questions.map((q) => (q && typeof q === 'object' ? (q as { id?: unknown }).id : undefined)));
-  if (![...ids].some((id) => typeof id === 'string' && defaults.has(id) && !ADDED_2026_10_25.has(id))) return questions;
+  const original = builtInIds(1, 8);
+  if (![...ids].some((id) => typeof id === 'string' && original.has(id))) return questions;
   const withHints = questions.map((q) => {
     const fresh = q && typeof q === 'object' ? defaults.get((q as Question).id) : undefined;
     return fresh && (q as Question).question === fresh.question && (q as Question).hint === undefined ? { ...(q as Question), hint: fresh.hint } : q;
   });
-  return [...withHints, ...DEFAULT_QUESTIONS.filter((q) => ADDED_2026_10_25.has(q.id) && !ids.has(q.id))];
+  return [...withHints, ...DEFAULT_QUESTIONS.filter((q) => added.has(q.id) && !ids.has(q.id))];
 }
+
+/** Settings saved before the first 2026-10-25 release: add ceb-<dice>-09 … 16 and hints. */
+export const addQuestionsOf20261025 = (questions: unknown) => addBuiltIns(questions, ADDED_2026_10_25);
+/** Settings saved before the second 2026-10-25 release: add the per-lesson batch. */
+export const addQuestionsOf20261025b = (questions: unknown) => addBuiltIns(questions, ADDED_2026_10_25_B);

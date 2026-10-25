@@ -3,6 +3,7 @@ import { Button } from '../ui/Button';
 import { ConfirmDialog } from '../ui/ConfirmDialog';
 import { inputClass } from '../ui/Field';
 import { useSettings } from '../../store/settingsStore';
+import { useHistory } from '../../store/historyStore';
 import { toast } from '../../store/toastStore';
 import { DICE_NUMBERS, type DiceNumber, type Difficulty, type Question } from '../../types';
 import { QuestionEditor } from './QuestionEditor';
@@ -48,6 +49,13 @@ export function QuestionsTab() {
   const [editor, setEditor] = useState<EditorState | null>(null);
   const [deleting, setDeleting] = useState<Question | null>(null);
   const [confirmReset, setConfirmReset] = useState(false);
+  const [confirmHistoryReset, setConfirmHistoryReset] = useState(false);
+  const historyAsked = useHistory((s) => s.asked);
+  const resetHistory = useHistory((s) => s.reset);
+  const askedHere = useMemo(() => {
+    const seen = new Set(historyAsked);
+    return questions.filter((q) => seen.has(q.id)).length;
+  }, [historyAsked, questions]);
   const [dialog, setDialog] = useState<'import' | 'export' | null>(null);
 
   const deferredSearch = useDeferredValue(search);
@@ -84,6 +92,17 @@ export function QuestionsTab() {
             <p className="text-lg text-ink-soft">
               {plural(questions.length, 'question')}. When a player rolls a number, they get a question from that
               number’s group.
+            </p>
+            <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-base text-ink-soft">
+              <span>
+                Asked on this device: <strong className="text-ink">{askedHere}</strong> of {questions.length}. Unasked questions come
+                first in every game; once all are used, the ones asked longest ago come back.
+              </span>
+              {historyAsked.length > 0 && (
+                <Button size="sm" onClick={() => setConfirmHistoryReset(true)}>
+                  Reset question history
+                </Button>
+              )}
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -249,6 +268,18 @@ export function QuestionsTab() {
           if (deleting) deleteQuestion(deleting.id);
           setDeleting(null);
           toast({ tone: 'info', title: 'Question deleted' });
+        }}
+      />
+      <ConfirmDialog
+        open={confirmHistoryReset}
+        title="Reset question history?"
+        message="This device forgets which questions were asked in earlier games, so any question can come up again. A game in progress still won’t repeat its own questions."
+        confirmLabel="Reset history"
+        onCancel={() => setConfirmHistoryReset(false)}
+        onConfirm={() => {
+          resetHistory();
+          setConfirmHistoryReset(false);
+          toast({ tone: 'success', title: 'Question history reset' });
         }}
       />
       <ConfirmDialog

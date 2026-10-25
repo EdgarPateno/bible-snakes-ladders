@@ -18,27 +18,46 @@ export function borrowOrder(dice: DiceNumber): DiceNumber[] {
 }
 
 /**
- * Pick a question for the rolled number that has not been asked this game. When the rolled number has
- * none left, borrow an unasked one from the closest number (see borrowOrder). Only after every question
- * has been asked once does the list start over, never with the question just asked.
+ * Pick a question for the rolled number that has not been asked this game. Questions never asked on this
+ * device (`history`, oldest first) come first; when all of them have been seen in earlier games, the one
+ * asked longest ago comes next. When the rolled number has none left, borrow from the closest number
+ * (see borrowOrder). Only after every question has been asked in this game does the game's list start
+ * over, never with the question just asked.
  */
-export function pickQuestion(dice: DiceNumber, questions: Question[], asked: string[], rand: Rand = Math.random): PickResult {
+export function pickQuestion(
+  dice: DiceNumber,
+  questions: Question[],
+  asked: string[],
+  history: readonly string[] = [],
+  rand: Rand = Math.random,
+): PickResult {
   if (questions.length === 0) return { question: null, asked, borrowed: false };
   const used = new Set(asked);
   let fresh = questions.filter((q) => !used.has(q.id));
-  let history = asked;
+  let gameAsked = asked;
   if (fresh.length === 0) {
     const last = asked[asked.length - 1];
     fresh = questions.length > 1 ? questions.filter((q) => q.id !== last) : questions;
-    history = [];
+    gameAsked = [];
   }
+  const seenAt = new Map(history.map((id, i) => [id, i]));
+  const unseen = fresh.filter((q) => !seenAt.has(q.id));
   for (const n of borrowOrder(dice)) {
-    const pool = fresh.filter((q) => q.diceNumber === n);
+    const pool = (unseen.length ? unseen : fresh).filter((q) => q.diceNumber === n);
     if (pool.length === 0) continue;
-    const question = pool[Math.min(pool.length - 1, Math.floor(rand() * pool.length))];
-    return { question, asked: [...history, question.id], borrowed: n !== dice };
+    const question = unseen.length
+      ? pool[Math.min(pool.length - 1, Math.floor(rand() * pool.length))]
+      : pool.reduce((oldest, q) => ((seenAt.get(q.id) ?? 0) < (seenAt.get(oldest.id) ?? 0) ? q : oldest));
+    return { question, asked: [...gameAsked, question.id], borrowed: n !== dice };
   }
   return { question: null, asked, borrowed: false };
+}
+
+/** Add an asked question to the device history (oldest first, each id once, newest last). */
+export function recordAsked(history: readonly string[], id: string, cap = 5000): string[] {
+  const next = history.filter((h) => h !== id);
+  next.push(id);
+  return next.length > cap ? next.slice(next.length - cap) : next;
 }
 
 /** Games saved before 2026-10-25 kept per-number bags of the ids still to ask; rebuild the asked list from them. */

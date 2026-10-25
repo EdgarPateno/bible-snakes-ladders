@@ -1,3 +1,4 @@
+# ALREADY APPLIED (commit f5c54d5). Do not rerun: the data now holds later batches too.
 # One-off (2026-10-25): adds 48 Cebuano questions (8 per dice number) from Leksiyon lessons not used before,
 # and gives every built-in question a `hint` naming its lesson. Proof quotes are checked against the lesson
 # text saved in research/leksiyon-2026-10-25/ (read with the gstack /browse headed browser).
@@ -76,7 +77,7 @@ NEW = [
     ('ceb-3-11', 23, 'medium', 'Asang bukid nagkampo ang mga Israelinhon mga duha ka bulan human sila mobiya sa Ehipto?', ['Sinai', 'Bukid sa Sinai', 'Mount Sinai', 'Horeb', 'Bukid sa Horeb'],
      'Didto sa Bukid sa Sinai, misaad ang mga Israelinhon nga buhaton nila ang tanan nga isulti ni Jehova.', 'Exodo 19:1–20:21',
      'Mga duha ka bulan human makabiya sa Ehipto ang mga Israelinhon, miabot sila sa Bukid sa Sinai ug nagkampo didto.'),
-    ('ceb-3-12', 25, 'medium', 'Kinsa ang hataas nga saserdote nga mao lang ang puwedeng mosulod sa Labing Balaan sa tabernakulo?', ['Aaron', 'Aron'],
+    ('ceb-3-12', 25, 'medium', 'Kinsa ang hataas nga saserdote nga mao lang ang puwedeng mosulod sa Labing Balaan sa tabernakulo?', ['Aaron'],
      'Ang hataas nga saserdote nga si Aaron mosulod sa Labing Balaan kas-a kada tuig aron motanyag ug halad.', 'Exodo 25:1-9; Hebreohanon 9:1-7',
      'Ang hataas nga saserdote lang nga si Aaron ang puwedeng mosulod sa Labing Balaan.'),
     ('ceb-3-13', 26, 'medium', 'Kinsa ang espiya nga kauban ni Josue nga miingon: ‘Mapildi nato sila’?', ['Caleb', 'Kaleb'],
